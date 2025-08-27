@@ -1,0 +1,140 @@
+<!-- public/home.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Code Editor</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Collaborative Code Editor</h1>
+        <h3>What we should call you?</h3>
+        <div class="username-details">
+            <img src="/dp/default.jpg" id="displayPicture">
+            <input type="text" id="username" class="enterusername" placeholder="Enter your name" required>
+        </div>
+        <div>
+            <label><input type="radio" name="gender" id="male" value="male"> Male</label>
+            <label><input type="radio" name="gender" id="female" value="female">Female</label>
+        </div>
+        <div class="error" id="error-message">Invalid session code. Please try again.</div>
+
+        <p>Create a new coding session or join an existing one.</p>
+
+        <button class="button" id="create-button">Generate New Session</button>
+
+        <div class="code-display" id="code-display">
+            <p>Your 2-digit verification code:</p>
+            <div class="code" id="code-value">--</div>  
+            <p>Share this link with others:</p>
+            <div class="link" id="share-link"></div>
+            <button class="button" id="enter-editor">Enter Editor</button>
+        </div>
+
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+
+        <div class="input-group">
+            <label for="join-code">Enter code to join:</label>
+            <input type="number" id="join-code" maxlength="2" pattern="[0-9]{2}">
+            <button class="join-button" id="join-button">Join</button>
+        </div>
+
+        <div class="instructions">
+            <p><strong>How it works:</strong></p>
+            <ol>
+                <li>Generate a new session or enter an existing code</li>
+                <li>Share your unique link with collaborators</li>
+                <li>Work together in real-time on the same code</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-EDITOR v2.0</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <!-- Tech background elements -->
+    <div class="tech-bg" id="tech-bg"></div>
+    
+    <!-- Binary code animation -->
+    <div class="binary-code" style="left: 5%; top: 0;">01001000 01110101 01101101 01100001 01101110 00100000 01010010 01101001 01100111 01101000 01110100 01110011</div>
+    <div class="binary-code" style="left: 25%; top: 0;">01010100 01100101 01110010 01101101 01110011 00100000 00110010 00101110 00110000</div>
+    <div class="binary-code" style="left: 75%; top: 0;">01010000 01110010 01101001 01110110 01100001 01100011 01111001 00100000 01010000 01110010 01101111 01110100 01101111 01100011 01101111 01101100</div>
+
+
+    <!-- Binary code animation -->
+    <!-- <div class="binary-code" style="bottom: 5%; top: 70%;">01001000 01110101 01101101 01100001 01101110 00100000 01010010 01101001 01100111 01101000 01110100 01110011</div>
+    <div class="binary-code" style="bottom: 25%; top: 0;">01010100 01100101 01110010 01101101 01110011 00100000 00110010 00101110 00110000</div>
+    <div class="binary-code" style="bottom: 75%; top: 0;">01010000 01110010 01101001 01110110 01100001 01100011 01111001 00100000 01010000 01110010 01101111 01110100 01101111 01100011 01101111 01101100</div> -->
+
+    <div class="cyber-container">
+        <h1>COLLABORATIVE-CODE-EDITOR v2.0</h1>
+        <h3>ENTER YOUR AGENT IDENTIFICATION</h3>
+        
+        <div class="username-details">
+            <img src="/dp/default.jpg" id="displayPicture">
+            <input type="text" id="username" class="enterusername" placeholder="AGENT_NAME">
+        </div>
+        
+        <div class="gender-selection">
+            <label><input type="radio" name="gender" id="male" value="male"> <i class="fas fa-mars"></i> MALE</label>
+            <label><input type="radio" name="gender" id="female" value="female"> <i class="fas fa-venus"></i> FEMALE</label>
+        </div>
+        
+        <div class="error" id="error-message">INVALID SESSION CODE. TRY AGAIN.</div>
+        
+        <p>INITIATE NEW CODING SESSION OR JOIN EXISTING NODE</p>
+        
+        <button class="cyber-button" id="create-button">
+            <i class="fas fa-plus-circle"></i> GENERATE NEW SESSION
+        </button>
+        
+        <div class="code-display" id="code-display">
+            <p>YOUR SESSION VERIFICATION CODE:</p>
+            <div class="code" id="code-value">--</div>
+            <p>SHARE THIS ACCESS LINK WITH CO-AGENTS:</p>
+            <div class="link" id="share-link"></div>
+            <button class="cyber-button" id="enter-editor">
+                <i class="fas fa-terminal"></i> ENTER EDITOR
+            </button>
+        </div>
+        
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+        
+        <div class="input-group">
+            <label for="join-code">ENTER SESSION CODE:</label>
+            <input type="text" id="join-code" inputmode="numeric" pattern="\d{2}" maxlength="2">
+            <button class="join-button" id="join-button">
+                <i class="fas fa-sign-in-alt"></i> JOIN
+            </button>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>OPERATION PROTOCOL:</strong></p>
+            <ol>
+                <li>GENERATE NEW SESSION OR INPUT EXISTING CODE</li>
+                <li>TRANSMIT ACCESS LINK TO TEAM MEMBERS</li>
+                <li>COLLABORATE IN REAL-TIME CODE SYNCHRONIZATION</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,1251 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.code-container {
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.code-editor {
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  resize: vertical;
+  background-color: #f8f9fa;
+  transition: border 0.3s ease;
+}
+
+
+.CodeMirror-gutters {
+  background: #2d2d2d; 
+  border-right: 1px solid #444;
+}
+.breakpoint {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+  display: inline-block;
+  margin-left: -27px;
+}
+
+.editor-container {
+  display: flex;
+  position: relative;
+}
+
+.code-editor {
+  flex: 1;
+}
+
+.minimap-container {
+  margin-top:10px;
+  width: 100px; /* Adjust width */
+  overflow: hidden;
+  border-left: 1px solid #ccc;
+  background: #1e1e1e; /* Match theme */
+}
+
+.minimap-container .CodeMirror {
+  font-size: 8px; /* Reduce font size */
+  height: 300px;
+  opacity: 0.6; /* Semi-transparent */
+  pointer-events: none; /* Prevent interaction */
+}
+
+.call-controls {
+    margin: 20px 0;
+}
+.programming-lang-btn{
+  height: 25px;
+  width: 25px;
+  background-color: none;
+}
+.language-btn{
+  background-color:   none;
+}
+#output{
+    padding: 5px;
+}
+#outputkadiv{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/******************** Call **********************/
+
+#startCall {
+    background-color: #4CAF50;
+    color: white;
+}
+#endCall {
+    background-color: #f44336;
+    color: white;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+.popup button {
+    margin: 10px;
+}
+#status {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.editor-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.editor-button:hover {
+    background-color: #005999;
+}
+
+/********************   Chattt  ********************/   
+/********************   Chattt  ********************/   
+/********************   Chattt  ********************/   
+/********************   Chattt  ********************/   
+/********************   Chattt  ********************/   
+.chat-container {
+    max-width: 800px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .users-panel {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+  }
+  .users-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3f5973;
+  }
+  .users-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .users-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #3f5973;
+  }
+  .chat-panel {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: white;
+  }
+  .messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+  }
+  .message {
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  .user-message {
+    background-color: #3498db;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  .other-message {
+    background-color: #eaeaea;
+    color: #333;
+  }
+  .system-message {
+    background-color: #f9e7a8;
+    color: #333;
+    text-align: center;
+    max-width: 100%;
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .message-info {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #eaeaea;
+  }
+  #message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  #send-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #send-button:hover {
+    background-color: #2980b9;
+  }
+  .login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .login-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .typing-indicator {
+    font-style: italic;
+    color: #999;
+    padding: 5px 15px;
+    height: 20px;
+  }
+  /* File sharing styles */
+  .file-upload-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .file-upload-label {
+    background-color: #95a5a6;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .file-upload-label:hover {
+    background-color: #7f8c8d;
+  }
+  #file-upload {
+    display: none;
+  }
+  .file-preview {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  .file-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+  }
+  .file-message {
+    display: flex;
+    flex-direction: column;
+  }
+  .file-message-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  .file-message-file {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  .file-icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+  .file-download-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .user-message .file-download-link {
+    color: white;
+  }
+  .file-upload-progress {
+    width: 100%;
+    height: 4px;
+    margin-top: 2px;
+    background-color: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+  }
+  .file-upload-progress-bar {
+    height: 100%;
+    background-color: #3498db;
+    width: 0%;
+    transition: width 0.3s;
+  }
+  .attachment-badge {
+    position: relative;
+    display: inline-block;
+  }
+  .attachment-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .clear-file {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #e74c3c;
+  }
+  
+  /* Audio recording styles */
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .record-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .record-button:hover {
+    background-color: #c0392b;
+  }
+  .record-button.recording {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
+  }
+  .audio-time {
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: #7f8c8d;
+  }
+  .audio-message {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .audio-player {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+  }
+  .audio-preview {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .audio-preview-waveform {
+    flex: 1;
+    height: 40px;
+    background: #ddd;
+    border-radius: 4px;
+  }
+  .audio-preview-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .audio-preview-time {
+    font-size: 0.8em;
+    color: #7f8c8d;
+    min-width: 60px;
+  }
+
+/* *******************   DRAG AND DROPPPPPPPPPP   *******************   */
+
+
+        .container {
+          display: flex;
+          gap: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+      
+      .sidebar {
+          flex: 1;
+          max-width: 300px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          padding: 15px;
+      }
+      
+      .editor {
+          flex: 3;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+      }
+      
+      .drop-area {
+          height: 150px;
+          border: 2px dashed #3498db;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #e1f0fa;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+      
+      .drop-area.highlight {
+          background-color: #bbdefb;
+          border-color: #1976d2;
+      }
+      
+      .drop-area p {
+          color: #555;
+          text-align: center;
+          padding: 0 20px;
+      }
+      
+      .files-list {
+          list-style-type: none;
+          margin-top: 15px;
+          max-height: calc(100vh - 250px);
+          overflow-y: auto;
+          border-top: 1px solid #eee;
+          padding-top: 10px;
+          padding-left: 0;
+      }
+      
+      .file-item {
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+          transition: background-color 0.2s;
+      }
+      
+      .file-item:hover {
+          background-color: #f0f0f0;
+      }
+      
+      .file-item.active {
+          background-color: #e3f2fd;
+          font-weight: bold;
+      }
+      
+      .file-icon {
+          margin-right: 10px;
+          color: #777;
+      }
+      
+      .file-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+      
+      .folder-item {
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+          transition: background-color 0.2s;
+          font-weight: bold;
+      }
+      
+      .folder-item:hover {
+          background-color: #f0f0f0;
+      }
+      
+      .folder-content {
+          margin-left: 20px;
+          border-left: 1px solid #ddd;
+          padding-left: 10px;
+      }
+      
+      /* .code-editor {
+          width: 100%;
+          height: calc(100vh - 240px);
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 15px;
+          font-family: monospace;
+          resize: none;
+          font-size: 14px;
+          line-height: 1.5;
+          background-color: #fff;
+      } */
+      
+      .button-group {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+      }
+      
+      button {
+          padding: 8px 16px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.2s;
+      }
+      
+      .action-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+      }
+      
+      .select-folder-btn {
+          background-color: #3498db;
+          color: white;
+          margin-right: 10px;
+      }
+      
+      .select-folder-btn:hover {
+          background-color: #2980b9;
+      }
+      
+      .select-files-btn {
+          background-color: #3498db;
+          color: white;
+      }
+      
+      .select-files-btn:hover {
+          background-color: #2980b9;
+      }
+      
+      .save-btn {
+          background-color: #2ecc71;
+          color: white;
+      }
+      
+      .save-btn:hover {
+          background-color: #27ae60;
+      }
+      
+      .save-btn:disabled {
+          background-color: #95a5a6;
+          cursor: not-allowed;
+      }
+      
+      .clear-btn {
+          background-color: #e74c3c;
+          color: white;
+      }
+      
+      .clear-btn:hover {
+          background-color: #c0392b;
+      }
+      
+      .file-info {
+          color: #777;
+          font-size: 14px;
+          margin-bottom: 5px;
+      }
+      
+      .compatibility-warning {
+          background-color: #fff3cd;
+          color: #856404;
+          padding: 10px;
+          border-radius: 4px;
+          margin-bottom: 15px;
+          display: none;
+      }
+
+
+      .create-file-btn {
+        background-color: #2ecc71;
+        color: white;
+    }
+    
+    .create-file-btn:hover {
+        background-color: #27ae60;
+    }
+    
+    /* Make the action-buttons a little more flexible */
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .action-buttons button {
+        flex: 1;
+    }
+/* headeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
+
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.code-container {
+  height:30%;
+  position: relative;
+}
+.CodeMirror {
+  height: 100%;
+  font-size: 16px;
+}
+.status {
+  font-size: 14px;
+  margin-left: 20px;
+}
+.connected {
+  color: #2ecc71;
+}
+.disconnected {
+  color: #e74c3c;
+}
+.users-count {
+  font-size: 14px;
+  margin-right: 10px;
+}
+select {
+  padding: 4px;
+  margin-right: 10px;
+}
+.session-info {
+  background-color: #f3f4f6;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+.session-code {
+  font-weight: bold;
+  color: #4285f4;
+}
+.copy-link {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.copy-link:hover {
+  background-color: #3367d6;
+}
+.copied {
+  margin-left: 8px;
+  color: #34a853;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.copy-container {
+  display: flex;
+  align-items: center;
+}
+
+
+/***************************** Version Control *****************************/
+.form-group {
+    margin-bottom: 15px;
+}
+ input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+button {
+    padding: 10px;
+    /* background-color: #4CAF50; */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+/***************************** Username Header *****************************/
+.username-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:10px;
+}
+#displayPicture{
+  height:50px; width: 50px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+}
+.enterusername{
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 150px;
+    align-items: center;
+}
+#enterusername{
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    align-items: center;
+}
+#displayPicture{
+    height:50px; width: 50px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+}
+
+/***************************** Commit message *****************************/
+.commit-history-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:10px;
+}
+#commit_status{
+    display: inline;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.status-message {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.show {
+    animation: fadeIn 0.5s forwards;
+}
+.hide {
+    animation: fadeOut 0.5s forwards;
+}
+
+/***************************** Commit history *****************************/
+.commit-history{
+    width:400px;
+    border:1px solid black;
+}
+.history{
+    display: flex; 
+    flex-direction: row;  
+}
+.repoDP{
+    border-radius: 25px;
+}
+.dp-details, repoDP{
+    display: flex;
+    justify-content: top;
+    align-items: top;
+}
+.history{
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.more{
+    float: right;
+
+    background-color: #ccc;
+    height:12px;
+    width: 12px;
+    border-radius: 7.5px;
+}
+.main-details{
+    font-size:14px;
+    width:300px;
+}
+.more2{
+    font-size:12px;
+}
+#history-1, #history-2, #history-3{
+    display:none;
+}
+
+
+
+/* Keyyyyyyyyyy bindingsssssssssssss*/
+
+.container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+}
+
+h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.action-button {
+  padding: 12px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-label {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.keybind-indicator {
+  background-color: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.compile-button { background-color: #4CAF50; color: white; }
+.run-button { background-color: #2196F3; color: white; }
+.copySL-button { background-color: #9C27B0; color: white; }
+.changelang-button { background-color: #FF9800; color: white; }
+.save-button { background-color: #795548; color: white; }
+.load-button { background-color: #607D8B; color: white; }
+.joinchat-button { background-color: #00BCD4; color: white; }
+.commit-button { background-color: #009688; color: white; }
+.history-button { background-color: #673AB7; color: white; }
+.resetvc-button { background-color: #FF5722; color: white; }
+.changetheme-button { background-color: #3F51B5; color: white; }
+.attach-button { background-color: #8BC34A; color: white; }
+.download-button { background-color: #FFC107; color: white; }
+.startrec-button { background-color: #E91E63; color: white; }
+.stoprec-button { background-color: #F44336; color: white; }
+
+.action-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.settings-panel {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-height: fit-content;
+  overflow-y: auto;
+}
+
+.keybind-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.keybind-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.keybind-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.keybind-display {
+  background-color: #eee;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: monospace;
+  margin-right: 10px;
+  min-width: 100px;
+  text-align: center;
+  color: #666;
+}
+
+.keybind-button {
+  background-color: #ddd;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.keybind-button:hover {
+  background-color: #ccc;
+}
+
+.keybind-button.recording {
+  background-color: #ff5252;
+  color: white;
+}
+
+.keybind-controls {
+  display: flex;
+  align-items: center;
+}
+
+.log-output {
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  height: 150px;
+  overflow-y: auto;
+  font-family: monospace;
+}
+
+.log {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.success { color: #4CAF50; }
+.error { color: #ff5252; }
+.info { color: #2196F3; }
+.warning { color: #FFC107; }
+
+.empty-keybind {
+  color: #999;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+.editor-container2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.editor2 {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+iframe {
+  width: 90%;
+  height: 300px;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+/**/
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.converter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-output-container {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .input-output-container {
+    flex-direction: column;
+  }
+}
+
+.code-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.language-select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+#language {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 220px;
+  font-size: 16px;
+  background-image: url('/icons/python.png'); /* Default Image */
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 40px;
+  cursor: pointer;
+}
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  resize: vertical;
+  background-color: #fff;
+}
+
+button {
+  /* background-color: #4CAF50; */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.explanation {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.copy-button {
+  background-color: #2196F3;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.copy-button:hover {
+  background-color: #0b7dda;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.hidden {
+  display: none;
+}
+
+/* WHite boardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+
+#whiteboard {
+  border: 5px solid black;
+  cursor: url('/icons/brush.png') 5 18, crosshair;
+}
+
+
+.controls { 
+  margin: 10px; 
+}
+
+#eraser{
+  border: none;
+  border: 1px solid black;
+  cursor: url('/icons/erasor.png') 16 16, pointer !important;
+}
+#erasorPNG{
+  height: 20px;
+  width: 20px;
+}
+
+.color-btn {
+height: 30px;
+width: 30px;
+border-radius: 50%;
+border: none;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.color-btn img {
+height: 30px;
+width: 30px;
+}
+
+/* Specific background colors */
+.color-btn[data-color="#000000"] {
+background-color: black;
+}
+
+.color-btn[data-color="#FF0000"] {
+background-color: red;
+}
+
+.color-btn[data-color="#0000FF"] {
+background-color: blue;
+}
+
+.color-btn[data-color="#008000"] {
+background-color: green;
+}
+
+#basicColors{
+  display: flex;
+  flex-direction: row;
+}
