@@ -1,6 +1,6 @@
 
 
-const socket = io();
+const socket = io('https://soniverse-3-0-0.onrender.com);
 const ngrokLink = socket;
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -5328,4 +5328,5 @@ socket.on("addText", (data) => {
 //         console.error("Save cancelled or failed:", error);
 //     }
 // });
+
 //---------------------------- save to downloads directly ----------------------------
