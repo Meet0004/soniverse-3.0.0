@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeResizers();
         applyBlackboardTheme();
         document.querySelector(".apply-btn-progMode").click();
+        document.querySelector(".apply-btn-progMode").click();
         document.getElementById('theme-cssSheet').href = '/css/m5new.css';
         document.getElementById('chahiyeTab').href = '';
         if(whatTheTheme == 'neo'){
@@ -5331,4 +5332,5 @@ socket.on("addText", (data) => {
 // });
 
 //---------------------------- save to downloads directly ----------------------------
+
 
