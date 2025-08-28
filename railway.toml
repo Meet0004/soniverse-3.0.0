@@ -1,5 +1,0 @@
-[build]
-builder = "NIXPACKS"
-
-[phases.setup]
-workdir = "soniverse-backend"
