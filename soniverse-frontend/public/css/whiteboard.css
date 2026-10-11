@@ -1,0 +1,67 @@
+#whiteboard {
+  border: 5px solid black;
+  cursor: url('/icons/brush.png') 5 18, crosshair;
+}
+
+
+.controls { 
+  margin: 10px; 
+}
+
+#eraser{
+  border: none;
+  border: 1px solid black;
+  cursor: url('/icons/erasor.png') 16 16, pointer !important;
+}
+#erasorPNG{
+  height: 20px;
+  width: 20px;
+}
+
+.color-btn {
+height: 30px;
+width: 30px;
+border-radius: 50%;
+border: none;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.color-btn img {
+height: 30px;
+width: 30px;
+}
+
+/* Specific background colors */
+.color-btn[data-color="#000000"] {
+background-color: black;
+}
+
+.color-btn[data-color="#FF0000"] {
+background-color: red;
+}
+
+.color-btn[data-color="#0000FF"] {
+background-color: blue;
+}
+
+.color-btn[data-color="#008000"] {
+background-color: green;
+}
+
+
+#basicColors{
+  display: flex;
+  flex-direction: row;
+}
+#colorPicker{
+  height: 36px;
+  width: 60px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

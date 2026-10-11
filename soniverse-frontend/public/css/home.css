@@ -1,0 +1,511 @@
+/* style.css */
+:root {
+    --primary: #00f0ff;
+    --primary-light: #7df9ff;
+    --primary-dark: #00a6c7;
+    --accent: #ff2d75;
+    --background: #0a0e17;
+    --card-bg: rgba(16, 22, 36, 0.9);
+    --text: #e0f2fe;
+    --text-muted: #94a3b8;
+    --border: #1e293b;
+    --error: #ff4d4d;
+    --neon-glow: 0 0 10px rgba(0, 240, 255, 0.8),
+                 0 0 20px rgba(0, 240, 255, 0.6),
+                 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tech background elements */
+.tech-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.grid-line {
+    position: absolute;
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.horizontal {
+    width: 100%;
+    height: 1px;
+}
+
+.vertical {
+    width: 1px;
+    height: 100%;
+}
+
+.circuit-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--primary);
+}
+
+.binary-code {
+    position: absolute;
+    z-index: -1; /* Add this to ensure they stay in background */
+    color: rgba(0, 240, 255, 0.1);
+    font-family: monospace;
+    font-size: 0.8rem;
+    user-select: none;
+    animation: scroll 20s linear infinite;
+}
+
+/* Main container */
+.cyber-container {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6),
+                inset 0 0 10px rgba(0, 240, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.cyber-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 0%,
+        rgba(0, 240, 255, 0.05) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 8s linear infinite;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: var(--neon-glow);
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    border-radius: 3px;
+}
+
+h3 {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Username section */
+.username-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#displayPicture {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+#displayPicture:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.enterusername {
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    transition: all 0.3s ease;
+    width: 200px;
+    text-align: center;
+    z-index: 999;
+}
+
+.enterusername:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--neon-glow); z-index: 999;
+}
+
+/* Gender selection */
+.gender-selection {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gender-selection label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.gender-selection label:hover {
+    color: var(--primary-light);
+}
+
+.gender-selection input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.gender-selection input[type="radio"]:checked {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.gender-selection input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background: var(--background);
+    border-radius: 50%;
+}
+
+/* Buttons */
+.cyber-button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #0a0e17;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.cyber-button:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.cyber-button:hover::before {
+    left: 100%;
+}
+
+/* Code display section */
+.code-display {
+    display: none;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.code-display p {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.code {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1rem 0;
+    letter-spacing: 5px;
+    text-shadow: var(--neon-glow);
+}
+
+.link {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px dashed var(--primary);
+    border-radius: 8px;
+    word-break: break-all;
+    color: var(--primary-light);
+}
+
+/* Divider */
+.or-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-muted); z-index: 999;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--border);
+}
+
+.or-divider span {
+    padding: 0 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Join section */
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0; z-index: 999;
+}
+
+.input-group label {
+    color: var(--text-muted);
+}
+
+#join-code {
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    width: 80px;
+    text-align: center; z-index: 999;
+}
+
+#join-code:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--neon-glow);
+}
+
+.join-button {
+    background: linear-gradient(135deg, var(--accent), #ff6b9d);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px; z-index: 999;
+}
+
+.join-button:hover {
+    background: linear-gradient(135deg, #ff1a5e, var(--accent));
+    box-shadow: 0 0 20px rgba(255, 45, 117, 0.6);
+    transform: translateY(-2px); z-index: 999;
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.instructions p {
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+}
+
+.instructions li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.instructions li::before {
+    content: '▹';
+    color: var(--primary);
+    position: absolute;
+    left: -1.5rem;
+}
+
+/* Error message */
+.error {
+    color: var(--error);
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(30deg) translate(-30%, -30%);
+    }
+    100% {
+        transform: rotate(30deg) translate(30%, 30%);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-5px);
+    }
+    40%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cyber-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .username-details {
+        flex-direction: column;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
