@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
@@ -477,7 +478,60 @@ app.post('/commit', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 6000;
+const jdoodleVersionIndexes = {
+    c: '5',
+    cpp17: '1',
+    java: '4',
+    python3: '4',
+    nodejs: '4',
+    php: '4',
+    ruby: '4',
+    swift: '4',
+    kotlin: '3',
+    go: '4',
+    rust: '3'
+};
+
+app.post('/api/execute', async (req, res) => {
+    const { script, language, versionIndex, stdin } = req.body || {};
+
+    if (typeof script !== 'string' || !script.trim()) {
+        return res.status(400).json({ error: 'A non-empty script is required' });
+    }
+
+    if (jdoodleVersionIndexes[language] !== String(versionIndex)) {
+        return res.status(400).json({ error: 'Unsupported language or version' });
+    }
+
+    const clientId = process.env.JDOODLE_CLIENT_ID;
+    const clientSecret = process.env.JDOODLE_CLIENT_SECRET;
+    if (!clientId || !clientSecret) {
+        return res.status(503).json({
+            error: 'JDoodle is not configured. Set JDOODLE_CLIENT_ID and JDOODLE_CLIENT_SECRET on the backend.'
+        });
+    }
+
+    try {
+        const response = await axios.post('https://api.jdoodle.com/v1/execute', {
+            clientId,
+            clientSecret,
+            script,
+            language,
+            versionIndex: String(versionIndex),
+            stdin: typeof stdin === 'string' ? stdin : ''
+        }, { timeout: 30000 });
+
+        res.json(response.data);
+    } catch (error) {
+        const upstreamData = error.response?.data;
+        console.error('JDoodle execution error:', upstreamData || error.message);
+        res.status(502).json({
+            error: upstreamData?.error || upstreamData?.message || 'JDoodle execution request failed'
+        });
+    }
+});
+
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, "0.0.0.0", () => {
     console.log(`✅ Server running on port ${PORT}`);
 });
