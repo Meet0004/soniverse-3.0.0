@@ -1,6 +1,6 @@
 
 
-const socket = io("https://soniverse-3-0-0.onrender.com");
+const socket = io();
 const ngrokLink = socket;
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         initializeResizers();
         applyBlackboardTheme();
-        document.querySelector(".apply-btn-progMode").click();
-        document.querySelector(".apply-btn-progMode").click();
         document.getElementById('theme-cssSheet').href = '/css/m5new.css';
         document.getElementById('chahiyeTab').href = '';
         if(whatTheTheme == 'neo'){
@@ -327,7 +325,7 @@ function initializeResizers() {
   
     // horizontal resizer
     setupVerticalResize(
-      document.getElementById('divider1-dev'),
+            document.getElementById('divider1-dev'),
       document.getElementById('directory-panel-dev'),
       document.getElementById('html-panel-dev')
     );
@@ -1277,6 +1275,44 @@ function setEditorMode(language) {
 // ---------------------------- Compilation and Execution ----------------------------
 // ---------------------------- Compilation and Execution ----------------------------
 
+// Judge0 language IDs (subset — extend as needed)
+const jdoodleLanguages = {
+    c: { language: 'c', versionIndex: '5' },
+    cpp: { language: 'cpp17', versionIndex: '1' },
+    'c++': { language: 'cpp17', versionIndex: '1' },
+    java: { language: 'java', versionIndex: '4' },
+    python: { language: 'python3', versionIndex: '4' },
+    javascript: { language: 'nodejs', versionIndex: '4' },
+    php: { language: 'php', versionIndex: '4' },
+    ruby: { language: 'ruby', versionIndex: '4' },
+    swift: { language: 'swift', versionIndex: '4' },
+    kotlin: { language: 'kotlin', versionIndex: '3' },
+    go: { language: 'go', versionIndex: '4' },
+    rust: { language: 'rust', versionIndex: '3' }
+};
+
+const executionApiUrl = '/api/execute';
+
+async function executeWithJDoodle(config, script) {
+    const response = await fetch(executionApiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            script,
+            language: config.language,
+            versionIndex: config.versionIndex,
+            stdin: enteredData.value || ''
+        })
+    });
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(data.error || `HTTP error! Status: ${response.status}`);
+    }
+
+    return data;
+}
+
 async function compilation() {
     let status = document.getElementById('compile-status');
     let errorOutput = document.getElementById('error-output');
@@ -1286,40 +1322,26 @@ async function compilation() {
     const startTime = performance.now();
 
     const language = document.getElementById('selected-lang-text').innerText.toLowerCase();
-    const fileName = getFileName(language);
-    const version = getLatestVersion(language);
+    const config = jdoodleLanguages[language];
 
-    const requestData = {
-        code: editorInstance.getValue(),
-        language,
-        input: enteredData.value
-    };
-
-    console.log("Sending data:", requestData);
-    const apiUrl = "https://emkc.org/api/v2/piston/execute";
+    if (!config) {
+        status.innerText = "Unsupported language!";
+        status.style.color = "red";
+        return;
+    }
 
     try {
-        const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                language,
-                version,
-                files: [{ name: fileName, content: requestData.code }],
-                stdin: requestData.input
-            })
-        });
-
-        const data = await response.json();
+        const data = await executeWithJDoodle(config, editorInstance.getValue());
         const executionTime = (performance.now() - startTime).toFixed(2) + " ms";
-        console.log("Response data:", data);
+        const hasCompilationError = data.error || (data.statusCode && data.statusCode !== 200);
 
-        if (data.run?.stderr) {
+        if (hasCompilationError) {
             status.innerText = "Compilation Error!";
             status.style.color = "red";
-            errorOutput.innerText = formatErrorMessage(data.run.stderr);
+            const message = data.error || data.output || 'Compilation failed';
+            errorOutput.innerText = formatErrorMessage(message);
 
-            const lineNumber = extractErrorLine(data.run.stderr);
+            const lineNumber = extractErrorLine(message);
             if (lineNumber) highlightErrorLine(lineNumber);
         } else {
             status.innerText = "Compiled successfully!";
@@ -1332,8 +1354,8 @@ async function compilation() {
         console.error("Compilation error:", error);
         status.innerText = "Compilation failed!";
         status.style.color = "red";
-        const executionTime = (performance.now() - startTime).toFixed(2) + " ms";
-        document.getElementById('compilation-time').innerText = executionTime;
+        document.getElementById('compilation-time').innerText =
+            (performance.now() - startTime).toFixed(2) + " ms";
     }
 }
 
@@ -1372,58 +1394,19 @@ async function runCode() {
     }
     
     
-    const payload = {
-        language: document.getElementById('selected-lang-text').innerText.toLowerCase(),
-        version: getLatestVersion(document.getElementById('selected-lang-text').innerText.toLowerCase()),
-        files: [
-            {
-                name: getFileName(selectedLanguage),
-                content: editorInstance.getValue()
-            }
-        ],
-        stdin: enteredData.value,
-        args: [],
-        compile_timeout: 10000,
-        run_timeout: 5000
-    };
+    const language = document.getElementById('selected-lang-text').innerText.toLowerCase();
+    const config = jdoodleLanguages[language];
 
-    console.log("Payload : ", payload);
+    if (!config) {
+        output.innerText = 'Unsupported language for execution';
+        return;
+    }
     
     try {
-        // Make API request using fetch instead of axios
-        const response = await fetch('https://emkc.org/api/v2/piston/execute', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log("Payload response : ", data);
+        const data = await executeWithJDoodle(config, code);
         const executionTime = (performance.now() - startTime).toFixed(2) + " ms";
-        let resultText = '';
 
-        if (data.compile && data.compile.stderr) {
-            resultText += data.compile.stderr;
-        }
-        
-        // Add output if available
-        if (data.run) {
-            if (data.run.stdout) {
-                resultText += data.run.stdout;
-            }
-            
-            if (data.run.stderr) {
-                resultText += data.run.stderr;
-            }
-        }
-        
-        output.innerText = resultText || 'No output';
+        output.innerText = data.error || data.output || 'No output';
         document.getElementById('execution-time').innerText = executionTime;
         
     } catch (error) {
@@ -5330,8 +5313,4 @@ socket.on("addText", (data) => {
 //         console.error("Save cancelled or failed:", error);
 //     }
 // });
-
 //---------------------------- save to downloads directly ----------------------------
-
-
-
