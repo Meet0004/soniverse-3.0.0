@@ -1,2 +1,8 @@
 
-soniverse-image.tar
+CodeEditor-image.tar
+
+.env.*
+!.env.example
+node_modules/
+backend/uploads/
+backend/sessions/

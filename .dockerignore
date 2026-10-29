@@ -4,4 +4,5 @@
 **/.env.*
 **/uploads
 **/sessions
+*.tar
 npm-debug.log*

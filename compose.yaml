@@ -1,31 +1,18 @@
 services:
-  soniverse:
+  collabverse:
+    image: collabverse:1.1.0
     build:
       context: .
       dockerfile: Dockerfile
-    image: soniverse:local
-    restart: unless-stopped
-    init: true
     env_file:
-      - ./soniverse-backend/.env
-    environment:
-      PORT: "3000"
+      - ./backend/.env
     ports:
       - "3000:3000"
+    environment:
+      PORT: "3000"
     volumes:
-      - soniverse_uploads:/app/soniverse-backend/uploads
-      - soniverse_sessions:/app/soniverse-backend/sessions
-    healthcheck:
-      test:
-        - CMD
-        - node
-        - -e
-        - "fetch('http://127.0.0.1:3000/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 10s
+      - collabverse-uploads:/app/backend/uploads
+    restart: unless-stopped
 
 volumes:
-  soniverse_uploads:
-  soniverse_sessions:
+  collabverse-uploads:
