@@ -134,9 +134,9 @@ function initParticles() {
         createParticle(particlesContainer);
     }
 }
+
 function createParticle(container) {
     const particle = document.createElement('div');
-
     const binaryStrings = [
         '100001', '1111000', '110000', '101010', '111111',
         '000111', '010101', '110011', '001100', '101101',
@@ -148,15 +148,13 @@ function createParticle(container) {
         '001001', '010110', '001101', '110010', '101001',
         '011111', '111011', '000011', '100101', '011000',
         '101111', '000110', '111100', '001110', '110111',
-        '011101', '010100', '111110', '100011', '001000'  ];
+        '011101', '010100', '111110', '100011', '001000'
+    ];
 
-    const randomBinary = binaryStrings[Math.floor(Math.random() * binaryStrings.length)];
-    
-    particle.textContent = randomBinary;
-    
+    particle.textContent = binaryStrings[Math.floor(Math.random() * binaryStrings.length)];
     Object.assign(particle.style, {
         position: 'absolute',
-        fontSize: Math.random() * 8 + 8 + 'px', // Size between 8-16px
+        fontSize: Math.random() * 8 + 8 + 'px',
         color: 'rgba(0, 200, 255, ' + (Math.random() * 0.5 + 0.1) + ')',
         fontFamily: 'monospace',
         top: Math.random() * 100 + '%',
@@ -164,77 +162,37 @@ function createParticle(container) {
         transform: 'translate(-50%, -50%)',
         textShadow: '0 0 5px rgba(0, 200, 255, 0.8)',
         animation: `particle-animation-${Math.floor(Math.random() * 4) + 1} ${Math.random() * 20 + 15}s linear infinite`,
-        pointerEvents: 'none' // So they don't interfere with clicks
+        pointerEvents: 'none'
     });
-  container.appendChild(particle);
+
+    container.appendChild(particle);
 }
 
 const style = document.createElement('style');
 style.textContent = `
 @keyframes particle-animation-1 {
-  0% {
-      transform: translate(-50%, -50%) translateY(0) translateX(0);
-      opacity: 1;
-  }
-  50% {
-      opacity: 0.5;
-  }
-  100% {
-      transform: translate(-50%, -50%) translateY(-100vh) translateX(20vw);
-      opacity: 0;
-  }
+  0% { transform: translate(-50%, -50%) translateY(0) translateX(0); opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) translateY(-100vh) translateX(20vw); opacity: 0; }
 }
-
 @keyframes particle-animation-2 {
-  0% {
-      transform: translate(-50%, -50%) translateY(0) translateX(0);
-      opacity: 1;
-  }
-  50% {
-      opacity: 0.7;
-  }
-  100% {
-      transform: translate(-50%, -50%) translateY(-100vh) translateX(-20vw);
-      opacity: 0;
-  }
+  0% { transform: translate(-50%, -50%) translateY(0) translateX(0); opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) translateY(-100vh) translateX(-20vw); opacity: 0; }
 }
-
 @keyframes particle-animation-3 {
-  0% {
-      transform: translate(-50%, -50%) translateY(100vh) translateX(0);
-      opacity: 0;
-  }
-  20% {
-      opacity: 1;
-  }
-  80% {
-      opacity: 0.7;
-  }
-  100% {
-      transform: translate(-50%, -50%) translateY(-100vh) translateX(30vw);
-      opacity: 0;
-  }
+  0% { transform: translate(-50%, -50%) translateY(100vh) translateX(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) translateY(-100vh) translateX(30vw); opacity: 0; }
 }
-
 @keyframes particle-animation-4 {
-  0% {
-      transform: translate(-50%, -50%) translateY(100vh) translateX(0);
-      opacity: 0;
-  }
-  20% {
-      opacity: 0.5;
-  }
-  80% {
-      opacity: 0.3;
-  }
-  100% {
-      transform: translate(-50%, -50%) translateY(-100vh) translateX(-30vw);
-      opacity: 0;
-  }
-}
-`;
+  0% { transform: translate(-50%, -50%) translateY(100vh) translateX(0); opacity: 0; }
+  20% { opacity: 0.5; }
+  80% { opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) translateY(-100vh) translateX(-30vw); opacity: 0; }
+}`;
 document.head.appendChild(style);
-
 
 // ----------------------------------- Programmer Mode -----------------------------------
 // ----------------------------------- Programmer Mode -----------------------------------
