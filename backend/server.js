@@ -447,18 +447,23 @@ io.on('connection', (socket) => {
     
     // --------------------- call events ---------------------
     socket.on('offer', (offer) => {
-        console.log("offer pe aya")
-        socket.broadcast.emit('offer', offer);
+        if (!sessionCode || !activeSessions.has(sessionCode)) return;
+        socket.to(sessionCode).emit('offer', offer);
     });
     
     socket.on('answer', (answer) => {
-        console.log("answer pe aya")
-        socket.broadcast.emit('answer', answer);
+        if (!sessionCode || !activeSessions.has(sessionCode)) return;
+        socket.to(sessionCode).emit('answer', answer);
     });
     
     socket.on('ice-candidate', (candidate) => {
-        console.log("ice-candidate pe aya")
-        socket.broadcast.emit('ice-candidate', candidate);
+        if (!sessionCode || !activeSessions.has(sessionCode)) return;
+        socket.to(sessionCode).emit('ice-candidate', candidate);
+    });
+
+    socket.on('end-call', () => {
+        if (!sessionCode || !activeSessions.has(sessionCode)) return;
+        socket.to(sessionCode).emit('end-call');
     });
     
     // --------------------- join ---------------------
