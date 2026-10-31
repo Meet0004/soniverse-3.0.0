@@ -1,0 +1,603 @@
+/* Settings Panel */
+.settings-panel {
+    background-color: var(--settings-panel-bg);
+    border-radius: 6px;
+    padding: 20px;
+    max-height: fit-content;
+    overflow-y: auto;
+    color: var(--color-dark-blue);
+}
+
+#keybindingsList {
+    height: 450px;
+    width: 60vw;
+    overflow: auto;
+    margin-left: 10px;
+}
+#keybindingsList::-webkit-scrollbar {
+    width: 6px; /* very thin */
+}
+
+#keybindingsList::-webkit-scrollbar-thumb {
+    background-color: var(--editor-panel);
+    border-radius: 3px; /* rounded corners */
+}
+
+#keybindingsList::-webkit-scrollbar-track {
+    background: transparent; /* or you can set a light color if you want */
+}
+
+#resetKeybindingsBtn {
+    float: right;
+    margin: 20px;
+}
+
+.reset-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: var(--reset-btn-bg);
+    color: var(--text-black);
+    border: 1px solid var(--reset-btn-border);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.reset-btn:hover {
+    background-color: var(--reset-btn-hover);
+    border-color: var(--border-dark-gray);
+}
+
+.reset-btn:active {
+    background-color: var(--reset-btn-active);
+    transform: translateY(1px);
+}
+
+.reset-btn:focus-visible {
+    outline: 2px solid var(--reset-btn-focus);
+    outline-offset: 2px;
+}
+
+.reset-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.keybind-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--settings-border);
+    color: var(--color-dark-blue);
+}
+
+.keybind-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.keybind-label {
+    font-weight: 600;
+    color: var(--color-dark-blue);
+}
+
+.keybind-display {
+    background-color: var(--bg-light);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin-right: 10px;
+    min-width: 100px;
+    text-align: center;
+    color: var(--text-gray);
+}
+
+.keybind-button {
+    background-color: var(--settings-button-bg);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.keybind-button:hover {
+    background-color: var(--settings-button-hover);
+}
+
+.keybind-button.recording {
+    background-color: var(--settings-recording-bg);
+    color: var(--text-white);
+}
+
+.keybind-controls {
+    display: flex;
+    align-items: center;
+}
+
+.log-output {
+    padding: 15px;
+    margin: 10px;
+    background-color: var(--editor-panel);
+    box-shadow: inset 0 0 06px var(--color-text-lightest);
+    color: var(--text-white);
+    border-radius: 6px;
+    height: 150px;
+    overflow-y: auto;
+    font-family: monospace;
+    width: 60vw;
+
+}
+.log-output::-webkit-scrollbar {
+    width: 6px; /* very thin */
+}
+
+.log-output::-webkit-scrollbar-thumb {
+    background-color: var(--editor-panel);
+    border-radius: 3px; /* rounded corners */
+}
+
+.log-output::-webkit-scrollbar-track {
+    background: transparent; /* or you can set a light color if you want */
+}
+
+.log {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.success { color: var(--success-color); }
+.error { color: var(--accent-red); }
+.info { color: var(--primary-blue); }
+.warning { color: #FFC107; } /* Kept as is since it's a specific warning color */
+
+.empty-keybind {
+    color: var(--settings-placeholder-text);
+    font-style: italic;
+}
+
+.content-1 .keybindings-workspace {
+    --keybindings-ink: #edf3ff;
+    --keybindings-muted: #93a2bb;
+    --keybindings-line: var(--editor-border);
+    --keybindings-accent: #65a8ff;
+    --keybindings-surface: #101827;
+    --settings-button-bg: #151f31;
+    --settings-button-hover: #1b2940;
+    --settings-recording-bg: #347bd5;
+    --settings-placeholder-text: #93a2bb;
+    --reset-btn-bg: #151f31;
+    --reset-btn-border: rgba(159, 180, 214, 0.2);
+    --reset-btn-hover: #1b2940;
+    --reset-btn-active: #223553;
+    --reset-btn-focus: #65a8ff;
+    max-width: 1180px;
+    margin: 0 auto;
+    color: var(--keybindings-ink);
+}
+
+.keybindings-heading {
+    margin: 4px 0 24px;
+}
+
+.keybindings-eyebrow,
+.keybindings-guide-label {
+    color: var(--keybindings-accent);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+}
+
+.keybindings-heading h2 {
+    margin: 8px 0 6px;
+    color: var(--keybindings-ink);
+    font-size: clamp(26px, 3vw, 34px);
+    letter-spacing: -0.035em;
+}
+
+.keybindings-heading p,
+.keybindings-card-heading p {
+    margin: 0;
+    color: var(--keybindings-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.keybindings-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    align-items: start;
+    gap: 18px;
+}
+
+.keybindings-list-card,
+.keybindings-guide {
+    border: 1px solid var(--keybindings-line);
+    border-radius: 16px;
+    background: var(--keybindings-surface);
+    box-shadow: 0 12px 32px rgba(29, 42, 75, 0.06);
+}
+
+.keybindings-list-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.keybindings-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--keybindings-line);
+}
+
+.keybindings-card-heading h3,
+.keybindings-guide h3 {
+    margin: 0 0 5px;
+    color: var(--keybindings-ink);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.keybindings-card-mark,
+.keybindings-guide-icon {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    color: var(--keybindings-surface);
+    background: var(--keybindings-accent);
+}
+
+.keybindings-card-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+}
+
+.keybindings-card-mark svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.keybindings-workspace #keybindingsList {
+    box-sizing: border-box;
+    width: 100%;
+    height: min(450px, 58vh);
+    min-height: 280px;
+    margin: 0;
+    padding: 8px 20px;
+    overflow: auto;
+    scrollbar-color: #35445c transparent;
+    scrollbar-width: thin;
+}
+
+.keybindings-workspace #keybindingsList::-webkit-scrollbar,
+.keybindings-workspace .log-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+.keybindings-workspace #keybindingsList::-webkit-scrollbar-thumb,
+.keybindings-workspace .log-output::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #35445c;
+}
+
+.keybindings-workspace #keybindingsList::-webkit-scrollbar-track,
+.keybindings-workspace .log-output::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.keybindings-workspace .keybind-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    min-height: 58px;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--keybindings-line);
+    color: var(--keybindings-ink);
+}
+
+.keybindings-workspace .keybind-row:last-child {
+    border-bottom: 0;
+}
+
+.keybindings-workspace .keybind-label {
+    color: var(--keybindings-ink);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.keybindings-workspace .keybind-controls {
+    gap: 9px;
+}
+
+.keybindings-workspace .keybind-display {
+    box-sizing: border-box;
+    min-width: 104px;
+    margin: 0;
+    padding: 8px 12px;
+    border: 1px solid rgba(159, 180, 214, 0.2);
+    border-radius: 8px;
+    background: #131d2d;
+    color: var(--keybindings-ink);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.015em;
+}
+
+.keybindings-workspace .keybind-display.empty-keybind {
+    color: var(--keybindings-muted);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.keybindings-workspace .keybind-button {
+    min-width: 62px;
+    padding: 8px 12px;
+    border: 1px solid #347bd5;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.keybindings-workspace .keybind-button:hover {
+    transform: translateY(-1px);
+    border-color: #65a8ff;
+    background: #4564c7;
+    color: #fff;
+}
+
+.keybindings-workspace .keybind-button:focus-visible,
+.keybindings-guide #resetKeybindingsBtn:focus-visible {
+    outline: 3px solid rgba(101, 168, 255, 0.35);
+    outline-offset: 2px;
+}
+
+.keybindings-workspace .keybind-button.recording {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 5px 14px rgba(12, 16, 33, 0.2);
+}
+
+.keybindings-guide {
+    padding: 20px;
+}
+
+.keybindings-guide-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+}
+
+.keybindings-guide-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: currentColor;
+}
+
+.keybindings-guide h3 {
+    margin-top: 8px;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+}
+
+.keybindings-guide > p {
+    margin: 0;
+    color: var(--keybindings-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.keybindings-guide > p strong {
+    color: var(--keybindings-ink);
+}
+
+.keybindings-activity {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--keybindings-line);
+}
+
+.keybindings-activity-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--keybindings-ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.keybindings-activity-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #55b991;
+    box-shadow: 0 0 0 3px rgba(85, 185, 145, 0.12);
+}
+
+.keybindings-workspace .log-output {
+    box-sizing: border-box;
+    width: 100%;
+    height: 92px;
+    margin: 0;
+    padding: 10px 11px;
+    border: 1px solid rgba(159, 180, 214, 0.2);
+    border-radius: 9px;
+    background: #131d2d;
+    box-shadow: none;
+    color: var(--keybindings-muted);
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.keybindings-workspace .log {
+    margin: 0 0 5px;
+    overflow-wrap: anywhere;
+}
+
+.keybindings-workspace .log:last-child {
+    margin-bottom: 0;
+}
+
+.keybindings-workspace .log.success {
+    color: #56d49a;
+    background: transparent;
+    border: 0;
+}
+
+.keybindings-workspace .log.error {
+    color: #ff9a9a;
+    background: transparent;
+    border: 0;
+}
+
+.keybindings-workspace .log.info {
+    color: #65a8ff;
+    background: transparent;
+    border: 0;
+}
+
+.keybindings-guide #resetKeybindingsBtn {
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 16px 0 0;
+    padding: 10px 12px;
+    border-color: rgba(159, 180, 214, 0.2);
+    border-radius: 9px;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.keybindings-guide #resetKeybindingsBtn:hover {
+    border-color: #65a8ff;
+    background: #4564c7;
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .keybindings-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .keybindings-guide {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: 16px;
+        align-items: center;
+    }
+
+    .keybindings-guide-icon {
+        grid-row: span 2;
+        margin: 0;
+    }
+
+    .keybindings-guide-label {
+        align-self: end;
+    }
+
+    .keybindings-guide h3 {
+        align-self: start;
+        margin: 5px 0 0;
+    }
+
+    .keybindings-guide > p,
+    .keybindings-activity,
+    .keybindings-guide #resetKeybindingsBtn {
+        grid-column: 1 / -1;
+    }
+
+    .keybindings-guide > p {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-1 .keybindings-workspace {
+        padding: 0 2px;
+    }
+
+    .keybindings-heading {
+        margin-bottom: 18px;
+    }
+
+    .keybindings-card-heading {
+        padding: 15px;
+    }
+
+    .keybindings-workspace #keybindingsList {
+        height: 52vh;
+        min-height: 240px;
+        padding: 6px 15px;
+    }
+
+    .keybindings-workspace .keybind-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .keybindings-workspace .keybind-controls {
+        justify-content: space-between;
+    }
+}
+
+.icon {
+    border-radius: 8px;
+    font-size: 1em;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.icon.active {
+    cursor: pointer;
+    background: var(--editor-panel);
+}
+
+.icon.active:hover {
+    background: var(--editor-panel);
+    transform: scale(1.1);
+}
+
+.icon.inactive {
+    opacity: 0.3;
+    filter: grayscale(80%);
+}
+
+.icon.inactive:hover {
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+

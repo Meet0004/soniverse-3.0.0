@@ -1,0 +1,462 @@
+#icon-sidebar,
+#icon-sidebar .icon,
+#icon-sidebar .icon:hover,
+#icon-sidebar .icon.active {
+    background-color: var(--editor-panel);
+}
+
+#settings-panel,
+#settings-panel .settings-container,
+#settings-panel .left-settings-panel,
+#settings-panel .right-settings-panel,
+#settings-panel .content,
+#settings-panel .content-3,
+#settings-panel .content-4,
+#settings-panel .content-1,
+#settings-panel .settings-container-progMode,
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor,
+#settings-panel .setting-group-progMode,
+#settings-panel .setting-group-htmlEditor,
+#settings-panel .setting-group-cssEditor,
+#settings-panel .setting-group-jsEditor,
+#settings-panel .checkbox-group-progMode,
+#settings-panel .checkbox-group-htmlEditor,
+#settings-panel .checkbox-group-cssEditor,
+#settings-panel .checkbox-group-jsEditor,
+#settings-panel .checkbox-option-progMode,
+#settings-panel .checkbox-option-htmlEditor,
+#settings-panel .checkbox-option-cssEditor,
+#settings-panel .checkbox-option-jsEditor,
+#settings-panel .button-group-progMode,
+#settings-panel .button-group-developerSettings,
+#settings-panel .dropdown-progMode,
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor,
+#settings-panel .editor-wrapper,
+#settings-panel .keybindings-workspace,
+#settings-panel .keybindings-list-card,
+#settings-panel .keybindings-guide,
+#settings-panel .keybindings-card-heading {
+    background-color: var(--editor-panel);
+}
+
+#settings-panel .dropdown-progMode,
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor {
+    color: var(--color-dark-blue);
+}
+
+#settings-panel .left-settings-panel,
+#settings-panel .right-settings-panel,
+#settings-panel .settings-container,
+#settings-panel .settings-container-progMode,
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor,
+#settings-panel .keybindings-list-card,
+#settings-panel .keybindings-guide {
+    box-shadow: none;
+}
+
+#settings-panel .eachsettings,
+#settings-panel .eachsettings:hover,
+#settings-panel .eachsettings.active {
+    background-color: var(--editor-panel);
+    color: var(--color-dark-blue);
+}
+
+#settings-panel .eachsettings.active {
+    box-shadow: inset 3px 0 0 var(--color-dark-blue);
+}
+
+#settings-panel .keybindings-card-mark,
+#settings-panel .keybindings-guide-icon {
+    background-color: var(--editor-panel);
+    color: var(--color-dark-blue);
+}
+
+#settings-panel .keybindings-workspace .keybind-display,
+#settings-panel .keybindings-workspace .log-output {
+    background-color: var(--editor-input);
+    color: var(--editor-text);
+}
+
+#settings-panel .keybindings-workspace .keybind-display.empty-keybind,
+#settings-panel .keybindings-workspace .log-output {
+    color: var(--editor-muted);
+}
+
+#settings-panel .content.content-3 {
+    width: min(100%, 680px);
+    max-width: 680px;
+    padding: 28px;
+    border: 1px solid rgba(12, 16, 33, 0.2);
+    border-radius: 14px;
+    background-color: var(--editor-panel);
+    box-shadow: 0 12px 30px rgba(12, 16, 33, 0.07);
+}
+
+#settings-panel .content.content-3 > h2,
+#settings-panel .content.content-4 > h2 {
+    margin: 0 0 22px;
+    padding: 0 0 13px;
+    border-bottom: 1px solid rgba(12, 16, 33, 0.32);
+    color: var(--color-dark-blue);
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    letter-spacing: -0.035em;
+}
+
+#settings-panel .content.content-3,
+#settings-panel .content.content-4 {
+    font-family: Arial, sans-serif;
+}
+
+#settings-panel .settings-container-progMode,
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor {
+    border: 1px solid rgba(12, 16, 33, 0.16);
+    border-radius: 11px;
+    background-color: var(--editor-panel);
+    box-shadow: 0 5px 16px rgba(12, 16, 33, 0.045);
+}
+
+#settings-panel .settings-container-progMode {
+    padding: 22px;
+}
+
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor {
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+}
+
+#settings-panel .editor-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 14px;
+    background-color: var(--editor-panel);
+}
+
+#settings-panel .setting-group-progMode,
+#settings-panel .setting-group-htmlEditor,
+#settings-panel .setting-group-cssEditor,
+#settings-panel .setting-group-jsEditor {
+    margin-bottom: 18px;
+}
+
+#settings-panel .setting-group-progMode label,
+#settings-panel .setting-group-htmlEditor label,
+#settings-panel .setting-group-cssEditor label,
+#settings-panel .setting-group-jsEditor label {
+    color: var(--color-dark-blue);
+    font-size: 14px;
+}
+
+#settings-panel .dropdown-progMode,
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor {
+    border: 1px solid rgba(12, 16, 33, 0.24);
+    border-radius: 7px;
+    background-color: var(--editor-panel);
+}
+
+#settings-panel .dropdown-progMode {
+    min-height: 42px;
+}
+
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor {
+    min-height: 40px;
+}
+
+#settings-panel .dropdown-progMode:focus-visible,
+#settings-panel .input-number-progMode:focus-visible,
+#settings-panel .input-number-htmlEditor:focus-visible,
+#settings-panel .input-number-cssEditor:focus-visible,
+#settings-panel .input-number-jsEditor:focus-visible {
+    outline: 2px solid rgba(12, 16, 33, 0.68);
+    outline-offset: 2px;
+}
+
+#settings-panel .checkbox-group-progMode,
+#settings-panel .checkbox-group-htmlEditor,
+#settings-panel .checkbox-group-cssEditor,
+#settings-panel .checkbox-group-jsEditor {
+    margin: 16px 0 20px;
+}
+
+#settings-panel .checkbox-option-progMode,
+#settings-panel .checkbox-option-htmlEditor,
+#settings-panel .checkbox-option-cssEditor,
+#settings-panel .checkbox-option-jsEditor {
+    min-height: 39px;
+    margin: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(12, 16, 33, 0.1);
+    background-color: var(--editor-panel);
+}
+
+#settings-panel .checkbox-option-progMode:last-child,
+#settings-panel .checkbox-option-htmlEditor:last-child,
+#settings-panel .checkbox-option-cssEditor:last-child,
+#settings-panel .checkbox-option-jsEditor:last-child {
+    border-bottom: 0;
+}
+
+#settings-panel .checkbox-option-progMode label,
+#settings-panel .checkbox-option-htmlEditor label,
+#settings-panel .checkbox-option-cssEditor label,
+#settings-panel .checkbox-option-jsEditor label {
+    color: var(--color-dark-blue);
+    font-size: 14px;
+}
+
+#settings-panel .button-group-progMode,
+#settings-panel .button-group-developerSettings {
+    padding-top: 15px;
+    border-top: 1px solid rgba(12, 16, 33, 0.12);
+}
+
+#settings-panel .apply-btn-progMode,
+#settings-panel .apply-btn-developerSettings {
+    min-height: 42px;
+    padding: 0 20px;
+    border: 1px solid var(--color-dark-blue);
+    border-radius: 7px;
+    background-color: var(--color-dark-blue);
+    color: var(--editor-text);
+    transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+#settings-panel .apply-btn-progMode:hover,
+#settings-panel .apply-btn-developerSettings:hover {
+    transform: translateY(-1px);
+    background-color: #1d2c53;
+    box-shadow: 0 5px 12px rgba(12, 16, 33, 0.16);
+}
+
+#settings-panel .apply-btn-progMode:active,
+#settings-panel .apply-btn-developerSettings:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 1100px) {
+    #settings-panel .editor-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    #settings-panel .content.content-3,
+    #settings-panel .content.content-4 {
+        width: 100%;
+        max-width: none;
+        padding: 18px;
+    }
+
+    #settings-panel .editor-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+#settings-panel .right-settings-panel {
+    min-width: 0;
+    padding: 10px 14px;
+}
+
+#settings-panel .content.content-3 {
+    width: min(100%, 520px);
+    max-width: 520px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+#settings-panel .content.content-4 {
+    width: 100%;
+    max-width: none;
+    padding: 14px 18px;
+}
+
+#settings-panel .content.content-3 > h2,
+#settings-panel .content.content-4 > h2 {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    font-size: 21px;
+}
+
+#settings-panel .settings-container-progMode {
+    padding: 14px 16px;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor {
+    padding: 12px;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+#settings-panel .editor-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+#settings-panel .setting-group-progMode,
+#settings-panel .setting-group-htmlEditor,
+#settings-panel .setting-group-cssEditor,
+#settings-panel .setting-group-jsEditor {
+    margin-bottom: 9px;
+}
+
+#settings-panel .checkbox-group-progMode,
+#settings-panel .checkbox-group-htmlEditor,
+#settings-panel .checkbox-group-cssEditor,
+#settings-panel .checkbox-group-jsEditor {
+    margin: 8px 0 9px;
+}
+
+#settings-panel .checkbox-option-progMode,
+#settings-panel .checkbox-option-htmlEditor,
+#settings-panel .checkbox-option-cssEditor,
+#settings-panel .checkbox-option-jsEditor {
+    min-height: 29px;
+    padding: 3px 0;
+    border-color: rgba(12, 16, 33, 0.08);
+}
+
+#settings-panel .checkbox-option-progMode label,
+#settings-panel .checkbox-option-htmlEditor label,
+#settings-panel .checkbox-option-cssEditor label,
+#settings-panel .checkbox-option-jsEditor label {
+    font-size: 13px;
+}
+
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor {
+    min-height: 31px;
+    padding: 4px 7px;
+}
+
+#settings-panel .dropdown-progMode {
+    min-height: 33px;
+    padding: 5px 8px;
+}
+
+#settings-panel .button-group-progMode,
+#settings-panel .button-group-developerSettings {
+    padding-top: 9px;
+}
+
+#settings-panel .apply-btn-progMode,
+#settings-panel .apply-btn-developerSettings {
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
+}
+
+#settings-panel .setting-group-htmlEditor h2,
+#settings-panel .setting-group-cssEditor h2,
+#settings-panel .setting-group-jsEditor h2 {
+    margin: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(12, 16, 33, 0.16);
+    color: var(--color-dark-blue);
+    font-size: 16px;
+}
+
+@media (max-width: 900px) {
+    #settings-panel .editor-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    #settings-panel .right-settings-panel {
+        padding: 10px;
+    }
+
+    #settings-panel .content.content-3,
+    #settings-panel .content.content-4 {
+        padding: 12px;
+    }
+
+    #settings-panel .editor-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+#settings-panel,
+#settings-panel button,
+#settings-panel input,
+#settings-panel select,
+#settings-panel textarea {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+#settings-panel .eachsettings {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(12, 16, 33, 0.1);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: transform 160ms ease, box-shadow 160ms ease, font-weight 160ms ease;
+}
+
+#settings-panel .eachsettings:hover {
+    transform: translateX(3px);
+    box-shadow: inset 0 0 0 1px rgba(12, 16, 33, 0.18);
+}
+
+#settings-panel .eachsettings.active {
+    padding-left: 20px;
+    box-shadow: inset 4px 0 0 var(--color-dark-blue);
+    font-weight: 700;
+}
+
+#settings-panel .eachsettings.active::after {
+    width: 7px;
+    height: 12px;
+    margin-left: auto;
+    border-right: 2px solid var(--color-dark-blue);
+    border-bottom: 2px solid var(--color-dark-blue);
+    content: "";
+    transform: rotate(45deg) translateY(-2px);
+}
+
+#settings-panel .eachsettings.active:hover {
+    box-shadow: inset 4px 0 0 var(--color-dark-blue), inset 0 0 0 1px rgba(12, 16, 33, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #settings-panel .eachsettings {
+        transition: none;
+    }
+
+    #settings-panel .eachsettings:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,302 @@
+/* 
+.clear-btn {
+    background-color: var(--accent-red);
+    color: var(--text-white);
+}
+
+.clear-btn:hover {
+    background-color: var(--accent-dark-red);
+} */
+
+.file-info {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.compatibility-warning {
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.create-file-btn {
+    
+    background-color: var(--about-dark-blue);
+    color: var(--text-white);
+}
+
+.create-file-btn:hover {
+    background-color: var(--accent-dark-green);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.action-buttons button {
+    flex: 1;  
+    background-color: var(--editor-panel);
+    border: 1px solid var(--color-darker-blue);
+}
+
+.container-devMode {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar-devMode {
+    flex: 1;
+    max-width: 300px;
+    background-color: var(--editor-panel);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    padding: 15px;
+    background-color: var(--editor-panel);
+}
+
+.editor-devMode {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    background-color: var(--editor-panel);
+}
+
+.drop-area-devMode {
+    height: 150px;
+    width: 200px;
+    border: 2px dashed var(--primary-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--editor-panel);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drop-area-devMode.highlight {
+    
+    background-color: var(--editor-panel);
+    border-color: var(--border-blue);
+}
+
+.drop-area-devMode p {
+    color: var(--text-dark-gray);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.files-list-devMode {
+    list-style-type: none;
+    margin-top: 15px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    border-top: 1px solid var(--border-gray);
+    padding-top: 10px;
+    padding-left: 0;
+}
+
+.file-item-devMode {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.file-item-devMode:hover {
+    background-color: var(--editor-panel);
+}
+
+.file-item-devMode.active {
+    
+    background-color: var(--primary-dark-blue);
+    font-weight: bold;
+}
+
+.file-icon-devMode {
+    margin-right: 10px;
+    color: var(--text-gray);
+}
+
+.file-name-devMode {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-item-devMode {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.folder-item-devMode:hover {
+    
+    background-color: var(--editor-panel);
+}
+
+.folder-content-devMode {
+    margin-left: 20px;
+    border-left: 1px solid var(--border-dark-gray);
+    padding-left: 10px;
+}
+
+
+#live-preview{
+    
+    background-color: var(--color-white);
+}
+
+.folder-content-devMode {
+    margin-left: 20px;
+    
+    background-color: var(--editor-panel);
+    padding-left: 10px;
+}
+
+.button-group-devMode {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.action-buttons-devMode {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+    background-color: var(--editor-panel);
+}
+
+.select-folder-btn-devMode {
+    
+    background-color: var(--editor-panel);
+    color: var(--text-white);
+    margin-right: 1px;
+}
+
+.select-folder-btn-devMode:hover {
+    
+    background-color: var(--editor-panel);
+}
+
+.select-files-btn-devMode {
+    
+    background-color: var(--editor-panel);
+    color: var(--text-white);
+}
+
+.select-files-btn-devMode:hover {
+   
+    background-color: var(--editor-panel);
+}
+
+.save-btn-devMode {
+    
+    color: var(--text-white);
+}
+
+.save-btn-devMode:hover {
+    color: rgb(28, 34, 58);
+}
+
+.save-btn-devMode:disabled {
+    cursor: not-allowed;
+    color: var(--color-dark-blue)
+}
+#clear-btn-devMode{
+    
+    background-color: var(--editor-panel);
+}
+.clear-btn-devMode {
+    color: rgb(28, 34, 58);
+}
+#save-btn-new-devMode{
+    
+    background-color: var(--editor-panel);
+}
+.clear-btn-devMode:hover {
+    color: rgb(28, 34, 58);
+    
+}
+
+.file-info-devMode {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.compatibility-warning-devMode {
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.create-file-btn-devMode {
+    background-color: var(--bg-light-green);
+    color: var(--text-white);
+}
+
+.create-file-btn-devMode:hover {
+    background-color: var(--editor-panel);
+}
+
+.action-buttons-devMode {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.action-buttons-devMode button {
+    flex: 1;
+    background-color: var(--editor-panel);
+    border: 1px solid var(--color-darker-blue);
+}
+
+
+
+
+
+
+
+
+
+
+

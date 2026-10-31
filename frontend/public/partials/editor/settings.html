@@ -1,0 +1,362 @@
+    <div id="settings-panel">     
+        <div class="settings-container">
+            <div class="left-settings-panel">
+                <div id="settings-header">Settings - Panel</div>
+                <div class="eachsettings active" data-settings="3">Programmer Editor</div>
+                <div class="eachsettings" data-settings="4" id="">Developer Editor</div>
+                <div class="eachsettings" data-settings="1">Customize Key Bindings</div>
+                <div class="eachsettings" data-settings="5">About Code Editor</div>
+                <div class="eachsettings" data-settings="6">About Us</div>
+            </div>
+            <div class="right-settings-panel">
+                <div class="content content-3 active" >
+                    <h2>Programmer Editor</h2>
+                    
+                    <div class="settings-container-progMode">
+                        <!-- Theme Selection -->
+                        <div class="setting-group-progMode">
+                            <label for="theme-selector">Choose a theme:</label>
+                            <select id="theme-selector" class="dropdown-progMode">
+                                <option value="neo" selected>Midnight blue</option>
+                            </select>
+                        </div>
+                
+                        <!-- Numeric Input -->
+                        <div class="setting-group-progMode">
+                            <label for="tab-size">Tab Size:</label>
+                            <input type="number" id="tab-size" class="input-number-progMode" min="1" max="8" value="4">
+                        </div>
+                
+                        <!-- Checkbox Options -->
+                        <div class="checkbox-group-progMode">
+                            <div class="checkbox-option-progMode">
+                                <input type="checkbox" id="line-numbers" checked>
+                                <label for="line-numbers">Line Numbers</label>
+                            </div>
+                            <div class="checkbox-option-progMode">
+                                <input type="checkbox" id="line-wrapping" checked>
+                                <label for="line-wrapping">Line Wrapping</label>
+                            </div>
+                            <div class="checkbox-option-progMode">
+                                <input type="checkbox" id="auto-close-brackets" checked>
+                                <label for="auto-close-brackets">Auto Close Brackets</label>
+                            </div>
+                            <div class="checkbox-option-progMode">
+                                <input type="checkbox" id="match-brackets" checked>
+                                <label for="match-brackets">Match Brackets</label>
+                            </div>
+                        </div>
+                
+                        <!-- Apply Button with Feedback -->
+                        <div class="button-group-progMode">
+                            <button id="apply-settings" class="apply-btn-progMode">Apply Settings</button>
+                            <span class="apply-feedback-progMode"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content content-4">
+                    <h2 id="devheading">Developer Editor</h2>
+                    <div class="editor-wrapper">
+
+                        <div class="settings-container-htmlEditor">
+                        <!-- Theme Selection -->
+                        <div class="setting-group-htmlEditor">
+                            <h2>Html Editor</h2>
+                        </div>
+                
+                        <!-- Numeric Input -->
+                        <div class="setting-group-htmlEditor">
+                            <label for="tab-size-htmlEditor">Tab Size:</label>
+                            <input type="number" id="tab-size-htmlEditor" class="input-number-htmlEditor" min="1" max="8" value="4">
+                        </div>
+                
+                        <!-- Checkbox Options -->
+                        <div class="checkbox-group-htmlEditor">
+                            <div class="checkbox-option-htmlEditor">
+                                <input type="checkbox" id="line-numbers-htmlEditor" checked>
+                                <label for="line-numbers-htmlEditor">Line Numbers</label>
+                            </div>
+                            <div class="checkbox-option-htmlEditor">
+                                <input type="checkbox" id="line-wrapping-htmlEditor" checked>
+                                <label for="line-wrapping-htmlEditor">Line Wrapping</label>
+                            </div>
+                            <div class="checkbox-option-htmlEditor">
+                                <input type="checkbox" id="auto-close-brackets-htmlEditor" checked>
+                                <label for="auto-close-brackets-htmlEditor">Auto Close Brackets</label>
+                            </div>
+                            <div class="checkbox-option-htmlEditor">
+                                <input type="checkbox" id="match-brackets-htmlEditor" checked>
+                                <label for="match-brackets-htmlEditor">Match Brackets</label>
+                            </div>
+                            <div class="checkbox-option-htmlEditor">
+                                <input type="checkbox" id="auto-close-tags-htmlEditor" checked>
+                                <label for="auto-close-tags-htmlEditor">Auto Close Tags</label>
+                            </div>
+                        </div>
+                
+                        </div>
+
+
+                        <div class="settings-container-cssEditor">
+                        <!-- Theme Selection -->
+                        <div class="setting-group-cssEditor">
+                            <h2>Css Editor</h2>
+                        </div>
+                
+                        <!-- Numeric Input -->
+                        <div class="setting-group-cssEditor">
+                            <label for="tab-size-cssEditor">Tab Size:</label>
+                            <input type="number" id="tab-size-cssEditor" class="input-number-cssEditor" min="1" max="8" value="4">
+                        </div>
+                
+                        <!-- Checkbox Options -->
+                        <div class="checkbox-group-cssEditor">
+                            <div class="checkbox-option-cssEditor">
+                                <input type="checkbox" id="line-numbers-cssEditor" checked>
+                                <label for="line-numbers-cssEditor">Line Numbers</label>
+                            </div>
+                            <div class="checkbox-option-cssEditor">
+                                <input type="checkbox" id="line-wrapping-cssEditor" checked>
+                                <label for="line-wrapping-cssEditor">Line Wrapping</label>
+                            </div>
+                            <div class="checkbox-option-cssEditor">
+                                <input type="checkbox" id="auto-close-brackets-cssEditor" checked>
+                                <label for="auto-close-brackets-cssEditor">Auto Close Brackets</label>
+                            </div>
+                            <div class="checkbox-option-cssEditor">
+                                <input type="checkbox" id="match-brackets-cssEditor" checked>
+                                <label for="match-brackets-cssEditor">Match Brackets</label>
+                            </div>
+                            <div class="checkbox-option-cssEditor">
+                                <input type="checkbox" id="auto-close-tags-cssEditor" checked>
+                                <label for="auto-close-tags-cssEditor">Auto Close Tags</label>
+                            </div>
+                        </div>
+                
+                        </div>
+
+
+                        <div class="settings-container-jsEditor">
+                        <!-- Theme Selection -->
+                        <div class="setting-group-jsEditor">
+                            <h2>JS Editor</h2>
+                        </div>
+                
+                        <!-- Numeric Input -->
+                        <div class="setting-group-jsEditor">
+                            <label for="tab-size-jsEditor">Tab Size:</label>
+                            <input type="number" id="tab-size-jsEditor" class="input-number-jsEditor" min="1" max="8" value="4">
+                        </div>
+                
+                        <!-- Checkbox Options -->
+                        <div class="checkbox-group-jsEditor">
+                            <div class="checkbox-option-jsEditor">
+                                <input type="checkbox" id="line-numbers-jsEditor" checked>
+                                <label for="line-numbers-jsEditor">Line Numbers</label>
+                            </div>
+                            <div class="checkbox-option-jsEditor">
+                                <input type="checkbox" id="line-wrapping-jsEditor" checked>
+                                <label for="line-wrapping-jsEditor">Line Wrapping</label>
+                            </div>
+                            <div class="checkbox-option-jsEditor">
+                                <input type="checkbox" id="auto-close-brackets-jsEditor" checked>
+                                <label for="auto-close-brackets-jsEditor">Auto Close Brackets</label>
+                            </div>
+                            <div class="checkbox-option-jsEditor">
+                                <input type="checkbox" id="match-brackets-jsEditor" checked>
+                                <label for="match-brackets-jsEditor">Match Brackets</label>
+                            </div>
+                            <div class="checkbox-option-jsEditor">
+                                <input type="checkbox" id="auto-close-tags-jsEditor" checked>
+                                <label for="auto-close-tags-jsEditor">Auto Close Tags</label>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                    <div class="button-group-developerSettings">
+                        <button id="apply-developer-settings" class="apply-btn-developerSettings">Apply Settings</button>
+                        <span class="apply-feedback-developerSettings" role="status" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="content content-1">
+                    <div class="keybindings-workspace">
+                        <header class="keybindings-heading">
+                            <span class="keybindings-eyebrow">PERSONALIZE YOUR WORKFLOW</span>
+                            <h2>Make it yours</h2>
+                            <p>Set shortcuts for the actions you use most and keep your hands on the keyboard.</p>
+                        </header>
+
+                        <div class="keybindings-layout">
+                            <section class="keybindings-list-card" aria-label="Editor keyboard shortcuts">
+                                <div class="keybindings-card-heading">
+                                    <div>
+                                        <h3>Editor actions</h3>
+                                        <p>Choose an action, then record your shortcut.</p>
+                                    </div>
+                                    <span class="keybindings-card-mark" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Zm3 1v2h2v-2H7Zm4 0v2h2v-2h-2Zm4 0v2h2v-2h-2ZM7 11v2h2v-2H7Zm4 0v2h2v-2h-2Zm4 0v2h2v-2h-2ZM7 15v2h10v-2H7Z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div id="keybindingsList"></div>
+                            </section>
+
+                            <aside class="keybindings-guide">
+                                <div class="keybindings-guide-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M4 5.75A2.75 2.75 0 0 1 6.75 3h10.5A2.75 2.75 0 0 1 20 5.75v12.5A2.75 2.75 0 0 1 17.25 21H6.75A2.75 2.75 0 0 1 4 18.25V5.75ZM7 7v2h2V7H7Zm4 0v2h2V7h-2Zm4 0v2h2V7h-2ZM7 11v2h2v-2H7Zm4 0v2h2v-2h-2Zm4 0v2h2v-2h-2ZM7 15v2h10v-2H7Z"/>
+                                    </svg>
+                                </div>
+                                <span class="keybindings-guide-label">QUICK TIP</span>
+                                <h3>One shortcut away</h3>
+                                <p>Select <strong>Set</strong>, then press the key combination you want to use. You can combine a key with Ctrl, Alt, or Shift.</p>
+
+                                <div class="keybindings-activity">
+                                    <div class="keybindings-activity-heading">
+                                        <span>Activity</span>
+                                    </div>
+                                    <div class="log-output" aria-live="polite"></div>
+                                </div>
+
+                                <div id="resetKeybindingsBtn" class="reset-btn" title="Restore all keybindings to their default settings">
+                                    <svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                      <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                                    </svg>
+                                    Reset Keybindings
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content content-5 about-settings">
+                    <header class="about-settings-header">
+                        <span class="about-settings-eyebrow">SONIVERSE OVERVIEW</span>
+                        <h2>About Code Editor</h2>
+                        <p>A shared workspace to write, run, and explore code together.</p>
+                    </header>
+
+                    <section class="about-settings-section" aria-labelledby="editor-features-title">
+                        <h3 id="editor-features-title">Features &amp; functionality</h3>
+                        <div class="about-settings-grid">
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">&lt;/&gt;</span>
+                                <h4>Programmer Editor</h4>
+                                <p>Code in C, C++, Java, Python, JavaScript, Go, or Rust with syntax highlighting and configurable editor settings.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">WEB</span>
+                                <h4>Developer Editor &amp; Live Preview</h4>
+                                <p>Edit HTML, CSS, and JavaScript side by side with a live page preview.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">RUN</span>
+                                <h4>Compile, run &amp; test input</h4>
+                                <p>Run supported programs with custom input and view output, errors, and execution details.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">FILES</span>
+                                <h4>File Explorer</h4>
+                                <p>Select files or folders, create and edit files, save changes, or clear the workspace.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">SYNC</span>
+                                <h4>Shared coding sessions</h4>
+                                <p>Share a session link or code and edit code together in real time.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">CHAT</span>
+                                <h4>Collaboration room</h4>
+                                <p>Chat, see who's online, share files and voice notes, and make voice calls.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">AI</span>
+                                <h4>AI Assistant</h4>
+                                <p>Ask programming questions with the configured Groq AI model.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">↔</span>
+                                <h4>Code Converter</h4>
+                                <p>Convert between HTML, CSS, and JavaScript.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">DRAW</span>
+                                <h4>Collaborative Whiteboard</h4>
+                                <p>Draw together, add text, customize tools, clear the canvas, or download it.</p>
+                            </article>
+                            <article class="about-settings-card">
+                                <span class="about-settings-icon" aria-hidden="true">⌘</span>
+                                <h4>Personalized settings</h4>
+                                <p>Set indentation and editor options; customize or reset keyboard shortcuts.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="about-settings-section" aria-labelledby="editor-tech-title">
+                        <h3 id="editor-tech-title">Technology stack</h3>
+                        <div class="about-tech-list" aria-label="Technology stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>Socket.IO</span>
+                            <span>CodeMirror 5</span>
+                            <span>WebRTC</span>
+                            <span>Groq API</span>
+                            <span>JDoodle API</span>
+                            <span>Multer</span>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="content content-6 about-settings">
+                    <header class="about-settings-header">
+                        <span class="about-settings-eyebrow">THE PERSON BEHIND THE PROJECT</span>
+                        <h2>About Us</h2>
+                        <p>A little introduction to the creator of Soniverse.</p>
+                    </header>
+
+                    <article class="about-creator-card">
+                        <img class="about-creator-photo" src="/icons/meetsoni.png" alt="Meet Soni">
+                        <div class="about-creator-copy">
+                            <span class="about-settings-eyebrow">CREATOR &amp; DEVELOPER</span>
+                            <h3>Meet Soni</h3>
+                            <p>Meet Soni created Soniverse to bring coding, collaboration, and useful developer tools together in one workspace.</p>
+                            <p>From live code editing and previews to shared sessions and built-in tools, this project is designed to make it easier to build and learn together.</p>
+                            <nav class="about-social-links" aria-label="Meet Soni and Soniverse links">
+                                <a href="https://www.linkedin.com/in/meetsoni04/" target="_blank" rel="noopener noreferrer" aria-label="Meet Soni on LinkedIn">
+                                    <span class="about-social-mark" aria-hidden="true">in</span>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/Meet0004" target="_blank" rel="noopener noreferrer" aria-label="Meet Soni on GitHub">
+                                    <span class="about-social-mark" aria-hidden="true">GH</span>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://x.com/MeetSon28631118" target="_blank" rel="noopener noreferrer" aria-label="Meet Soni on X">
+                                    <span class="about-social-mark" aria-hidden="true">X</span>
+                                    <span>X</span>
+                                </a>
+                                <a href="https://leetcode.com/u/meet-soni/" target="_blank" rel="noopener noreferrer" aria-label="Meet Soni on LeetCode">
+                                    <span class="about-social-mark" aria-hidden="true">LC</span>
+                                    <span>LeetCode</span>
+                                </a>
+                                <a href="https://tinyurl.com/meetsoni-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Meet Soni's portfolio">
+                                    <span class="about-social-mark" aria-hidden="true">↗</span>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="https://tinyurl.com/soniverse-ide" target="_blank" rel="noopener noreferrer" aria-label="Soniverse marketing website">
+                                    <span class="about-social-mark" aria-hidden="true">S</span>
+                                    <span>Soniverse</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </article>
+                    <p class="about-creator-signoff">Thanks for exploring Soniverse.</p>
+                </section>
+            </div>
+        </div>
+    </div>

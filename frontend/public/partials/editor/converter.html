@@ -1,0 +1,52 @@
+    <div id="converter-container">
+        <div class="header-cc">
+            <h1>Professional Code Converter</h1>
+            <p>Easily convert between HTML, CSS, and JavaScript formats</p>
+        </div>
+        <div class="input-output-container">
+            <div class="code-section">
+                <div class="code-header">
+                    <label for="sourceLanguage">
+                        <span class="language-indicator-cc" id="sourceLanguageIcon-cc">
+                            <span class="language-icon-cc html-icon-cc"></span>
+                        </span>
+                        <strong>Source Language:</strong>
+                    </label>
+                    <select id="sourceLanguage" class="language-select">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                    <button class="copy-button" onclick="copyText('sourceCode')">Copy</button>
+                </div>
+                <textarea id="sourceCode" placeholder="Enter your source code here..."></textarea>
+            </div>
+            
+            <div class="code-section">
+                <div class="code-header">
+                    <label for="targetLanguage">
+                        <span class="language-indicator-cc" id="targetLanguageIcon-cc">
+                            <span class="language-icon-cc js-icon-cc"></span>
+                        </span>
+                        <strong>Target Language:</strong>
+                    </label>
+                    <select id="targetLanguage" class="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                    </select>
+                    <button class="copy-button" onclick="copyText('targetCode')">Copy</button>
+                </div>
+                <textarea id="targetCode" placeholder="Converted code will appear here..." readonly></textarea>
+            </div>
+        </div>
+    
+        <button id="convertButton" onclick="convertCode()">Convert Code</button>
+
+        <div id="message" class="message hidden"></div>
+
+        <div id="conversionExplanation" class="explanation hidden">
+            <h3>Conversion Explanation</h3>
+            <p id="explanationText"></p>
+        </div>
+    </div>

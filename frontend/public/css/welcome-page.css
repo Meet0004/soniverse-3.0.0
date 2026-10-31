@@ -8,11 +8,11 @@
 
 /* ---------- Root overlay ---------- */
 #welcome-page-wp {
-    --wp-bg: #05060b;
-    --wp-text: #f4f5fb;
-    --wp-dim: rgba(226, 232, 255, 0.62);
-    --wp-indigo: #6366f1;
-    --wp-cyan: #22d3ee;
+    --wp-bg: #090e19;
+    --wp-text: #edf3ff;
+    --wp-dim: rgba(147, 162, 187, 0.8);
+    --wp-indigo: #347bd5;
+    --wp-cyan: #65a8ff;
 
     position: fixed;
     top: 0;
@@ -38,10 +38,10 @@
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(40% 35% at 20% 25%, rgba(99, 102, 241, 0.38), transparent 70%),
-        radial-gradient(35% 35% at 82% 18%, rgba(34, 211, 238, 0.22), transparent 70%),
-        radial-gradient(40% 40% at 72% 88%, rgba(168, 85, 247, 0.26), transparent 70%),
-        radial-gradient(30% 30% at 14% 86%, rgba(56, 189, 248, 0.16), transparent 70%);
+        radial-gradient(40% 35% at 20% 25%, rgba(52, 123, 213, 0.38), transparent 70%),
+        radial-gradient(35% 35% at 82% 18%, rgba(101, 168, 255, 0.22), transparent 70%),
+        radial-gradient(40% 40% at 72% 88%, rgba(69, 100, 199, 0.26), transparent 70%),
+        radial-gradient(30% 30% at 14% 86%, rgba(101, 168, 255, 0.16), transparent 70%);
     filter: blur(34px);
     animation: wp-drift 24s ease-in-out infinite alternate;
 }
@@ -54,7 +54,7 @@
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(ellipse at center, transparent 30%, rgba(5, 6, 11, 0.92) 100%),
+        radial-gradient(ellipse at center, transparent 30%, rgba(9, 14, 25, 0.92) 100%),
         linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 64px 64px,
         linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 64px 64px;
 }
@@ -88,7 +88,7 @@
     width: 720px;
     height: 360px;
     transform: translateX(-50%);
-    background: radial-gradient(closest-side, rgba(99, 102, 241, 0.3), transparent);
+    background: radial-gradient(closest-side, rgba(52, 123, 213, 0.3), transparent);
     filter: blur(20px);
     z-index: -1;
     pointer-events: none;
@@ -110,11 +110,11 @@
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #c7d2fe;
+    color: #b7d3ff;
     background:
-        radial-gradient(circle at 16px 50%, var(--wp-cyan) 3px, rgba(34, 211, 238, 0.25) 4px, transparent 8px),
-        rgba(129, 140, 248, 0.1);
-    border: 1px solid rgba(129, 140, 248, 0.3);
+        radial-gradient(circle at 16px 50%, var(--wp-cyan) 3px, rgba(101, 168, 255, 0.25) 4px, transparent 8px),
+        rgba(101, 168, 255, 0.1);
+    border: 1px solid rgba(101, 168, 255, 0.3);
     border-radius: 999px;
     backdrop-filter: blur(8px);
     animation: wp-fade-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
@@ -137,12 +137,12 @@
     font-size: 1em;
     font-weight: 800;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 0%, #c7c2ff 45%, #67e8f9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #b7d3ff 45%, #65a8ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: none;
-    filter: drop-shadow(0 8px 30px rgba(99, 102, 241, 0.45));
+    filter: drop-shadow(0 8px 30px rgba(52, 123, 213, 0.45));
 }
 
 #welcome-page-wp .cursor-wp {
@@ -151,8 +151,8 @@
     height: 0.82em;
     margin-left: 6px;
     border-radius: 2px;
-    background: linear-gradient(180deg, #a5b4fc, var(--wp-cyan));
-    box-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+    background: linear-gradient(180deg, #65a8ff, var(--wp-cyan));
+    box-shadow: 0 0 14px rgba(101, 168, 255, 0.7);
     animation: wp-blink 1s infinite;
 }
 
@@ -198,6 +198,40 @@
     background: rgba(255, 255, 255, 0.06);
 }
 
+#welcome-page-wp .feature-wp-highlight {
+    position: relative;
+    border-color: rgba(101, 168, 255, 0.7);
+    background: linear-gradient(135deg, rgba(52, 123, 213, 0.24), rgba(69, 100, 199, 0.12));
+    box-shadow: 0 0 0 1px rgba(101, 168, 255, 0.12), 0 8px 26px rgba(29, 86, 157, 0.2);
+}
+
+#welcome-page-wp .feature-wp-highlight::after {
+    content: "CORE FEATURE";
+    position: absolute;
+    top: 6px;
+    right: 9px;
+    color: #a9d0ff;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+}
+
+#welcome-page-wp .feature-wp-highlight:hover {
+    border-color: #83b9ff;
+    background: linear-gradient(135deg, rgba(52, 123, 213, 0.32), rgba(69, 100, 199, 0.18));
+    box-shadow: 0 0 0 1px rgba(101, 168, 255, 0.2), 0 10px 30px rgba(29, 86, 157, 0.28);
+}
+
+#welcome-page-wp .feature-wp-highlight .feature-icon-wp {
+    border-color: rgba(131, 185, 255, 0.34);
+    background: rgba(101, 168, 255, 0.16);
+}
+
+#welcome-page-wp .feature-wp-highlight span {
+    color: #fff;
+    font-weight: 700;
+}
+
 #welcome-page-wp .feature-icon-wp {
     flex: 0 0 38px;
     width: 38px;
@@ -223,7 +257,7 @@
     font-weight: 500;
     line-height: 1.45;
     letter-spacing: 0;
-    color: rgba(226, 232, 255, 0.84);
+    color: rgba(237, 243, 255, 0.84);
     text-align: left;
 }
 
@@ -235,13 +269,13 @@
     gap: 18px;
     margin-top: 32px;
     padding: 10px 11px 10px 26px;
-    border: 1px solid rgba(205, 216, 255, 0.34);
+    border: 1px solid rgba(159, 180, 214, 0.34);
     border-radius: 12px;
     background: linear-gradient(
         115deg,
-        rgba(99, 102, 241, 0.28),
-        rgba(103, 120, 232, 0.18) 52%,
-        rgba(34, 211, 238, 0.2)
+        rgba(52, 123, 213, 0.28),
+        rgba(69, 100, 199, 0.18) 52%,
+        rgba(101, 168, 255, 0.2)
     );
     -webkit-backdrop-filter: blur(16px) saturate(145%);
     backdrop-filter: blur(16px) saturate(145%);
@@ -253,34 +287,34 @@
     cursor: pointer;
     box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.2) inset,
-        0 10px 28px rgba(8, 12, 35, 0.3),
-        0 0 24px rgba(99, 102, 241, 0.12);
+        0 10px 28px rgba(9, 14, 25, 0.3),
+        0 0 24px rgba(52, 123, 213, 0.12);
     transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
 }
 
 #welcome-page-wp .enter-button-wp:hover {
     transform: translateY(-2px);
-    border-color: rgba(224, 231, 255, 0.58);
+    border-color: rgba(159, 180, 214, 0.58);
     background: linear-gradient(
         115deg,
-        rgba(99, 102, 241, 0.38),
-        rgba(103, 120, 232, 0.27) 52%,
-        rgba(34, 211, 238, 0.3)
+        rgba(52, 123, 213, 0.38),
+        rgba(69, 100, 199, 0.27) 52%,
+        rgba(101, 168, 255, 0.3)
     );
     box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.26) inset,
-        0 12px 30px rgba(8, 12, 35, 0.36),
-        0 0 30px rgba(99, 102, 241, 0.2);
+        0 12px 30px rgba(9, 14, 25, 0.36),
+        0 0 30px rgba(52, 123, 213, 0.2);
 }
 
 #welcome-page-wp .enter-button-wp:active {
     transform: translateY(0);
-    background: rgba(72, 79, 156, 0.28);
-    box-shadow: 0 3px 10px rgba(26, 35, 91, 0.3);
+    background: rgba(52, 123, 213, 0.28);
+    box-shadow: 0 3px 10px rgba(9, 14, 25, 0.3);
 }
 
 #welcome-page-wp .enter-button-wp:focus-visible {
-    outline: 2px solid #a5b4fc;
+    outline: 2px solid #65a8ff;
     outline-offset: 3px;
 }
 
@@ -292,7 +326,7 @@
     place-items: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 9px;
-    background: rgba(13, 20, 54, 0.18);
+    background: rgba(19, 29, 45, 0.18);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     color: #fff;
@@ -304,7 +338,7 @@
 #welcome-page-wp .enter-button-wp:hover .button-arrow-wp {
     transform: translateX(3px);
     border-color: rgba(255, 255, 255, 0.34);
-    background: rgba(13, 20, 54, 0.26);
+    background: rgba(19, 29, 45, 0.26);
 }
 
 /* ---------- Keyframes ---------- */

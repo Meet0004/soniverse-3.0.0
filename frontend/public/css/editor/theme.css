@@ -1,0 +1,880 @@
+:root {
+    --editor-panel: #101827;
+    --editor-raised: #151f31;
+    --editor-input: #131d2d;
+    --editor-text: #edf3ff;
+    --editor-muted: #93a2bb;
+    --editor-accent: #65a8ff;
+    --editor-border: rgba(159, 180, 214, 0.16);
+    --color-dark-blue: #edf3ff;
+    --color-darker-blue: #101827;
+    --color-light-bg: #151f31;
+    --color-lighter-bg: #151f31;
+    --color-lightest-bg: #151f31;
+    --color-hover-bg: #1b2940;
+    --color-active-bg: #223553;
+    --color-border: rgba(159, 180, 214, 0.16);
+    --color-light-border: rgba(159, 180, 214, 0.13);
+    --color-lighter-border: rgba(159, 180, 214, 0.1);
+    --color-input-border: rgba(159, 180, 214, 0.2);
+    --color-input-focus: #65a8ff;
+    --color-placeholder: #93a2bb;
+    --color-text-dark: #edf3ff;
+    --color-text-medium: #c1cde0;
+    --color-text-light: #93a2bb;
+    --color-text-lighter: #93a2bb;
+    --color-text-lightest: #93a2bb;
+    --color-primary: #347bd5;
+    --color-primary-hover: #4564c7;
+    --color-page-bg: #090e19;
+    --color-component-bg: #101827;
+    --color-hover-light: #151f31;
+    --primary-blue: #347bd5;
+    --primary-dark-blue: #4564c7;
+    --secondary-dark: #151f31;
+    --secondary-light: #151f31;
+    --bg-light: #151f31;
+    --bg-white: #131d2d;
+    --bg-light-blue: #1b2940;
+    --bg-lighter-blue: #223553;
+    --text-dark: #edf3ff;
+    --text-light: #edf3ff;
+    --text-gray: #93a2bb;
+    --text-dark-gray: #c1cde0;
+    --text-black: #edf3ff;
+    --text-white: #edf3ff;
+    --border-light: rgba(159, 180, 214, 0.16);
+    --border-gray: rgba(159, 180, 214, 0.16);
+    --border-dark-gray: rgba(159, 180, 214, 0.2);
+    --border-blue: #65a8ff;
+    --about-dark-bg: #edf3ff;
+    --warning-light: #392f1c;
+    --warning-dark: #f2c879;
+}
+
+body {
+    color: #edf3ff;
+    background: #090e19;
+}
+
+#icon-sidebar {
+    background: #101827;
+    border-color: rgba(159, 180, 214, 0.13);
+}
+
+#icon-sidebar .icon {
+    color: #93a2bb;
+    border-color: transparent;
+}
+
+#icon-sidebar .icon:hover,
+#icon-sidebar .icon.active {
+    background: #151f31;
+    color: #65a8ff;
+}
+
+#icon-sidebar .icon img {
+    filter: brightness(0) invert(0.96) !important;
+}
+
+#icon-sidebar {
+    overflow: visible;
+}
+
+#icon-sidebar .icon[data-tooltip] {
+    position: relative;
+    overflow: visible;
+}
+
+#icon-sidebar .icon[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 12px);
+    z-index: 3000;
+    width: max-content;
+    max-width: 240px;
+    padding: 8px 11px;
+    border: 1px solid rgba(148, 177, 219, 0.22);
+    border-radius: 7px;
+    background: #182438;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+    color: #edf3ff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-4px, -50%);
+    transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+}
+
+#icon-sidebar .icon[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 5px);
+    z-index: 3001;
+    border: 5px solid transparent;
+    border-right-color: #182438;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: opacity 140ms ease, visibility 140ms ease;
+}
+
+#icon-sidebar .icon[data-tooltip]:hover::after,
+#icon-sidebar .icon[data-tooltip]:hover::before,
+#icon-sidebar .icon[data-tooltip]:focus-visible::after,
+#icon-sidebar .icon[data-tooltip]:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+#icon-sidebar .icon[data-tooltip]:hover::after,
+#icon-sidebar .icon[data-tooltip]:focus-visible::after {
+    transform: translate(0, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #icon-sidebar .icon[data-tooltip]::before,
+    #icon-sidebar .icon[data-tooltip]::after {
+        transition: none;
+    }
+}
+
+#main-content .action-buttons button img,
+#container-dev .action-buttons-devMode button img {
+    filter: brightness(0) invert(0.94);
+    opacity: 1;
+}
+
+#main-content .action-buttons button:hover img,
+#container-dev .action-buttons-devMode button:hover img {
+    filter: brightness(0) invert(1);
+}
+
+#main-content,
+#container-dev,
+#settings-panel,
+#converter-container,
+#realWhiteboard,
+#chitchat-container {
+    color: #edf3ff;
+    background-color: #090e19;
+}
+
+#main-content .container > .editor,
+#container-dev .container-devMode > .editor-devMode {
+    background-color: #101827;
+}
+
+#main-content #code-panel > .header {
+    color: #edf3ff;
+    background: #101827;
+    border-bottom: 1px solid rgba(159, 180, 214, 0.13);
+}
+
+#main-content .alldetailsmaybe,
+#main-content .alldetailsmaybe > span,
+#main-content #codeDetails,
+#main-content .users-count,
+#main-content #selected-lang-text,
+#main-content .dropdown-arrow {
+    color: #edf3ff;
+}
+
+#main-content #displayPicture {
+    border: 1px solid rgba(159, 180, 214, 0.24);
+}
+
+#main-content .enterusername {
+    color: #edf3ff;
+    background: #131d2d;
+    border: 1px solid rgba(159, 180, 214, 0.2);
+}
+
+#main-content .status.connected {
+    color: #56d49a;
+}
+
+#main-content .status.disconnected {
+    color: #ff8c8c;
+}
+
+#main-content .session-code {
+    color: #65a8ff;
+}
+
+#main-content #copied-message {
+    color: #56d49a;
+}
+
+#main-content #copyShareLinkBtn {
+    color: #fff;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    border: 1px solid transparent;
+}
+
+#main-content #copyShareLinkBtn:hover {
+    background: #4564c7;
+}
+
+#main-content .dropdown-toggle {
+    color: #edf3ff;
+    background: #131d2d;
+    border: 1px solid rgba(159, 180, 214, 0.2);
+    box-shadow: none;
+}
+
+#main-content .dropdown-toggle:hover {
+    background: #151f31;
+    border-color: rgba(101, 168, 255, 0.55);
+}
+
+#main-content .dropdown-menu {
+    color: #edf3ff;
+    background: #101827;
+    border: 1px solid rgba(159, 180, 214, 0.16);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+#main-content .language-btn {
+    color: #edf3ff;
+    background: transparent;
+}
+
+#main-content .language-btn:hover,
+#main-content .language-btn:focus-visible {
+    color: #fff;
+    background: #1b2940;
+}
+
+#main-content .panel,
+#container-dev .panel-dev,
+#main-content .sidebar,
+#main-content #code-panel,
+#main-content .files-list,
+#settings-panel .left-settings-panel,
+#settings-panel .right-settings-panel,
+#settings-panel .content,
+#settings-panel .settings-container,
+#settings-panel .settings-container-progMode,
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor,
+#settings-panel .keybindings-workspace,
+#settings-panel .keybindings-list-card,
+#settings-panel .keybindings-guide,
+#converter-container .code-section,
+#chitchat-container .users-panel-chitchat,
+#chitchat-container .chat-panel-chitchat,
+#chitchat-container .login-container-chitchat,
+#chitchat-container .popup-chitchatV,
+#realWhiteboard .controls-whiteboard {
+    color: #edf3ff;
+    background-color: #101827;
+    border-color: rgba(159, 180, 214, 0.13);
+}
+
+#main-content .header,
+#container-dev .header-dev,
+#main-content .drop-area,
+#main-content .drop-area-devMode,
+#settings-panel #settings-header,
+#settings-panel .eachsettings,
+#converter-container .code-header,
+#realWhiteboard .tool-section h3 {
+    color: #edf3ff;
+    background-color: #151f31;
+    border-color: rgba(159, 180, 214, 0.13);
+}
+
+#main-content #drop-area,
+#main-content .drop-area,
+#main-content .drop-area-devMode {
+    color: #edf3ff;
+    background-color: #151f31;
+    border-color: #65a8ff;
+}
+
+#main-content .drop-area p,
+#main-content .drop-area-devMode p {
+    color: #c1cde0;
+}
+
+#settings-panel label,
+#settings-panel .checkbox-option-progMode,
+#settings-panel .checkbox-option-htmlEditor,
+#settings-panel .checkbox-option-cssEditor,
+#settings-panel .checkbox-option-jsEditor {
+    color: #edf3ff;
+}
+
+#main-content .action-buttons button,
+#main-content .action-buttons-devMode button {
+    color: #edf3ff;
+    background-color: #151f31;
+    border-color: rgba(159, 180, 214, 0.24);
+}
+
+#main-content .action-buttons button:hover,
+#main-content .action-buttons-devMode button:hover {
+    background-color: #1b2940;
+}
+
+#main-content .clear-btn,
+#main-content .save-btn,
+#container-dev .clear-btn-devMode,
+#container-dev .save-btn-devMode {
+    color: #fff;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    border-color: transparent;
+}
+
+#main-content .save-btn:disabled,
+#container-dev .save-btn-devMode:disabled {
+    color: #93a2bb;
+    background: #151f31;
+    border: 1px solid rgba(159, 180, 214, 0.16);
+    opacity: 0.75;
+}
+
+#settings-panel .eachsettings.active {
+    color: #fff;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+}
+
+#main-content,
+#container-dev,
+#settings-panel,
+#converter-container,
+#realWhiteboard,
+#chitchat-container {
+    color: #edf3ff;
+}
+
+#main-content h1,
+#main-content h2,
+#main-content h3,
+#container-dev h1,
+#container-dev h2,
+#container-dev h3,
+#settings-panel h1,
+#settings-panel h2,
+#settings-panel h3,
+#converter-container h1,
+#converter-container h2,
+#converter-container h3,
+#chitchat-container h1,
+#chitchat-container h2,
+#realWhiteboard h1,
+#realWhiteboard h2,
+#realWhiteboard h3 {
+    color: #edf3ff;
+}
+
+#main-content input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#main-content select,
+#main-content textarea,
+#container-dev input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#container-dev select,
+#container-dev textarea,
+#settings-panel input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#settings-panel select,
+#settings-panel textarea,
+#converter-container input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#converter-container select,
+#converter-container textarea,
+#chitchat-container input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#chitchat-container select,
+#chitchat-container textarea,
+#realWhiteboard input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+#realWhiteboard select,
+#realWhiteboard textarea {
+    color: #edf3ff;
+    background-color: #131d2d;
+    border-color: rgba(159, 180, 214, 0.2);
+}
+
+#main-content input::placeholder,
+#main-content textarea::placeholder,
+#container-dev input::placeholder,
+#container-dev textarea::placeholder,
+#settings-panel input::placeholder,
+#settings-panel textarea::placeholder,
+#converter-container input::placeholder,
+#converter-container textarea::placeholder,
+#chitchat-container input::placeholder,
+#chitchat-container textarea::placeholder,
+#realWhiteboard input::placeholder,
+#realWhiteboard textarea::placeholder {
+    color: #93a2bb;
+    opacity: 1;
+}
+
+#main-content input:focus,
+#main-content select:focus,
+#main-content textarea:focus,
+#container-dev input:focus,
+#container-dev select:focus,
+#container-dev textarea:focus,
+#settings-panel input:focus,
+#settings-panel select:focus,
+#settings-panel textarea:focus,
+#converter-container input:focus,
+#converter-container select:focus,
+#converter-container textarea:focus,
+#chitchat-container input:focus,
+#chitchat-container select:focus,
+#chitchat-container textarea:focus,
+#realWhiteboard input:focus,
+#realWhiteboard select:focus,
+#realWhiteboard textarea:focus {
+    border-color: #65a8ff;
+    outline-color: rgba(101, 168, 255, 0.35);
+}
+
+#main-content button,
+#container-dev button,
+#settings-panel button,
+#converter-container button,
+#chitchat-container button,
+#realWhiteboard button {
+    color: #edf3ff;
+    border-color: rgba(159, 180, 214, 0.2);
+}
+
+#main-content .button-group button,
+#container-dev button,
+#settings-panel .apply-btn-progMode,
+#settings-panel .apply-btn-developerSettings,
+#converter-container #convertButton,
+#chitchat-container #join-button-chitchat,
+#chitchat-container #send-button-chitchat {
+    color: #fff;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    border-color: transparent;
+}
+
+#main-content .vertical-divider,
+#main-content .horizontal-divider,
+#container-dev .vertical-divider,
+#container-dev .horizontal-divider {
+    background-color: rgba(159, 180, 214, 0.16);
+}
+
+#main-content #output-panel,
+#main-content #input-panel,
+#main-content #Output,
+#main-content #output,
+#main-content #compilekaDiv,
+#main-content #outputkadiv,
+#container-dev #output-panel,
+#container-dev #Output {
+    color: #edf3ff;
+    background-color: #101827;
+}
+
+#chitchat-container .connected,
+#chitchat-container .copied {
+    color: #56d49a;
+}
+
+#chitchat-container #status-chitchatV {
+    color: #93a2bb;
+}
+
+#converter-container .header-cc h1,
+#converter-container .header-cc p {
+    color: #edf3ff;
+}
+
+#chitchat-container .popup-chitchatV h2 {
+    color: #edf3ff;
+}
+
+#realWhiteboard .controls-whiteboard,
+#realWhiteboard .tool-section h3,
+#realWhiteboard .action-btn {
+    border: 1px solid rgba(159, 180, 214, 0.13);
+}
+
+#realWhiteboard .action-btn:not(.warning):not(.success) {
+    color: #edf3ff;
+    background: #151f31;
+}
+
+#realWhiteboard .action-btn:not(.warning):not(.success):hover {
+    background: #1b2940;
+}
+
+#settings-panel,
+#settings-panel .settings-container,
+#settings-panel .left-settings-panel,
+#settings-panel .right-settings-panel {
+    background-color: #101827;
+}
+
+#settings-panel .content.content-3,
+#settings-panel .content.content-4,
+#settings-panel .content.content-1,
+#settings-panel .editor-wrapper,
+#settings-panel .keybindings-workspace {
+    background-color: #101827;
+}
+
+#settings-panel .settings-container-progMode,
+#settings-panel .settings-container-htmlEditor,
+#settings-panel .settings-container-cssEditor,
+#settings-panel .settings-container-jsEditor,
+#settings-panel .keybindings-list-card,
+#settings-panel .keybindings-guide {
+    background-color: #151f31;
+    border-color: rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .keybindings-card-heading {
+    background-color: #1b2940;
+    border-color: rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .setting-group-progMode,
+#settings-panel .setting-group-htmlEditor,
+#settings-panel .setting-group-cssEditor,
+#settings-panel .setting-group-jsEditor,
+#settings-panel .checkbox-group-progMode,
+#settings-panel .checkbox-group-htmlEditor,
+#settings-panel .checkbox-group-cssEditor,
+#settings-panel .checkbox-group-jsEditor,
+#settings-panel .checkbox-option-progMode,
+#settings-panel .checkbox-option-htmlEditor,
+#settings-panel .checkbox-option-cssEditor,
+#settings-panel .checkbox-option-jsEditor,
+#settings-panel .button-group-progMode,
+#settings-panel .button-group-developerSettings {
+    background-color: transparent;
+    border-color: rgba(159, 180, 214, 0.13);
+}
+
+#settings-panel .dropdown-progMode,
+#settings-panel .dropdown-htmlEditor,
+#settings-panel .dropdown-cssEditor,
+#settings-panel .dropdown-jsEditor,
+#settings-panel .input-number-progMode,
+#settings-panel .input-number-htmlEditor,
+#settings-panel .input-number-cssEditor,
+#settings-panel .input-number-jsEditor {
+    color: #edf3ff;
+    background-color: #131d2d;
+    border-color: rgba(159, 180, 214, 0.2);
+}
+
+#settings-panel .dropdown-progMode:focus-visible,
+#settings-panel .dropdown-htmlEditor:focus-visible,
+#settings-panel .dropdown-cssEditor:focus-visible,
+#settings-panel .dropdown-jsEditor:focus-visible,
+#settings-panel .input-number-progMode:focus-visible,
+#settings-panel .input-number-htmlEditor:focus-visible,
+#settings-panel .input-number-cssEditor:focus-visible,
+#settings-panel .input-number-jsEditor:focus-visible {
+    outline: 2px solid rgba(101, 168, 255, 0.6);
+    outline-offset: 2px;
+}
+
+#settings-panel .content.content-3 > h2,
+#settings-panel .content.content-4 > h2,
+#settings-panel .setting-group-htmlEditor h2,
+#settings-panel .setting-group-cssEditor h2,
+#settings-panel .setting-group-jsEditor h2 {
+    border-color: rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .button-group-progMode,
+#settings-panel .button-group-developerSettings {
+    border-color: rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .button-group-developerSettings {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .apply-btn-developerSettings {
+    min-height: 38px;
+    padding: 0 18px;
+    color: #fff;
+    background: linear-gradient(135deg, #347bd5, #4564c7);
+    border: 0;
+    border-radius: 7px;
+}
+
+#settings-panel .apply-btn-developerSettings:hover {
+    background: #4564c7;
+}
+
+#settings-panel .apply-feedback-developerSettings {
+    color: #56d49a;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 160ms ease;
+}
+
+#settings-panel .apply-feedback-developerSettings.show {
+    opacity: 1;
+}
+
+#settings-panel .keybindings-workspace .keybind-display,
+#settings-panel .keybindings-workspace .log-output {
+    color: #edf3ff;
+    background-color: #131d2d;
+    border-color: rgba(159, 180, 214, 0.2);
+}
+
+#settings-panel .keybindings-workspace .keybind-display.empty-keybind,
+#settings-panel .keybindings-workspace .log-output {
+    color: #93a2bb;
+}
+
+#settings-panel .right-settings-panel {
+    overflow-y: auto;
+}
+
+#settings-panel .content.content-5,
+#settings-panel .content.content-6 {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 28px;
+    color: #edf3ff;
+    background:
+        radial-gradient(700px 280px at 0% 0%, rgba(52, 123, 213, 0.12), transparent 70%),
+        #101827;
+    border: 1px solid rgba(159, 180, 214, 0.16);
+    border-radius: 16px;
+}
+
+#settings-panel .about-settings-header {
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(159, 180, 214, 0.16);
+}
+
+#settings-panel .about-settings-eyebrow {
+    color: #65a8ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+#settings-panel .about-settings-header h2 {
+    margin: 9px 0 8px;
+    color: #edf3ff;
+    font-size: clamp(24px, 3vw, 34px);
+    letter-spacing: -0.035em;
+}
+
+#settings-panel .about-settings-header p,
+#settings-panel .about-settings-card p,
+#settings-panel .about-creator-copy p {
+    color: #aab8ce;
+    line-height: 1.7;
+}
+
+#settings-panel .about-settings-section + .about-settings-section {
+    margin-top: 30px;
+}
+
+#settings-panel .about-settings-section > h3 {
+    margin: 0 0 16px;
+    color: #edf3ff;
+    font-size: 18px;
+}
+
+#settings-panel .about-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#settings-panel .about-settings-card {
+    min-width: 0;
+    padding: 20px;
+    background: #151f31;
+    border: 1px solid rgba(159, 180, 214, 0.14);
+    border-radius: 12px;
+    transition: border-color 160ms ease, transform 160ms ease;
+}
+
+#settings-panel .about-settings-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(101, 168, 255, 0.42);
+}
+
+#settings-panel .about-settings-icon {
+    display: inline-grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    margin-bottom: 14px;
+    color: #83b9ff;
+    background: rgba(101, 168, 255, 0.12);
+    border: 1px solid rgba(101, 168, 255, 0.2);
+    border-radius: 10px;
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#settings-panel .about-settings-card h4 {
+    margin: 0 0 8px;
+    color: #edf3ff;
+    font-size: 16px;
+}
+
+#settings-panel .about-settings-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#settings-panel .about-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#settings-panel .about-tech-list span {
+    padding: 8px 13px;
+    color: #c8d8f0;
+    background: #131d2d;
+    border: 1px solid rgba(159, 180, 214, 0.18);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#settings-panel .about-creator-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    max-width: 820px;
+    padding: 26px;
+    background: #151f31;
+    border: 1px solid rgba(159, 180, 214, 0.16);
+    border-radius: 14px;
+}
+
+#settings-panel .about-creator-photo {
+    display: block;
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    object-fit: cover;
+    object-position: center;
+    background: #131d2d;
+    border: 2px solid rgba(101, 168, 255, 0.48);
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+#settings-panel .about-creator-copy h3 {
+    margin: 7px 0 12px;
+    color: #edf3ff;
+    font-size: 25px;
+}
+
+#settings-panel .about-creator-copy p {
+    margin: 0 0 12px;
+}
+
+#settings-panel .about-creator-copy p:last-child {
+    margin-bottom: 0;
+}
+
+#settings-panel .about-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+#settings-panel .about-social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 7px 12px;
+    color: #dce8f8;
+    background: #131d2d;
+    border: 1px solid rgba(159, 180, 214, 0.18);
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+#settings-panel .about-social-links a:hover {
+    color: #fff;
+    background: #1b2940;
+    border-color: rgba(101, 168, 255, 0.55);
+    transform: translateY(-1px);
+}
+
+#settings-panel .about-social-links a:focus-visible {
+    outline: 2px solid #65a8ff;
+    outline-offset: 3px;
+}
+
+#settings-panel .about-social-mark {
+    display: inline-grid;
+    width: 20px;
+    height: 20px;
+    place-items: center;
+    color: #8dbfff;
+    background: rgba(101, 168, 255, 0.12);
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+#settings-panel .about-creator-signoff {
+    margin: 20px 0 0;
+    color: #93a2bb;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    #settings-panel .content.content-5,
+    #settings-panel .content.content-6 {
+        padding: 20px;
+    }
+
+    @media (max-width: 1000px) {
+        #settings-panel .about-settings-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 620px) {
+        #settings-panel .about-settings-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    #settings-panel .about-settings-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #settings-panel .about-creator-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+}

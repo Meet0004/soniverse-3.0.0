@@ -1,6 +1,6 @@
 services:
-  collabverse:
-    image: collabverse:1.1.0
+  soniverse:
+    image: soniverse:1.1.0
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,8 +11,8 @@ services:
     environment:
       PORT: "3000"
     volumes:
-      - collabverse-uploads:/app/backend/uploads
+      - soniverse-uploads:/app/backend/uploads
     restart: unless-stopped
 
 volumes:
-  collabverse-uploads:
+  soniverse-uploads:

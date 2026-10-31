@@ -1,0 +1,484 @@
+:root {
+    --color-white: white;
+    --color-black: #000;
+    --color-dark-black: #000000;
+    --color-dark-gray: #333;
+    --color-medium-gray: #444;
+    --color-light-gray: #555;
+    --color-lighter-gray: #666;
+    --color-border-gray: #ccc;
+    --color-light-red: #f8aeae;
+    --color-lighter-red: #ffcfcf;
+    --color-dark-blue: #0c1021;
+    --color-darker-blue: #0b1238;
+    --color-gradient-dark: linear-gradient(135deg, #000000, #0f0f0f, #1a1a1a);
+    --color-gradient-blue: linear-gradient(45deg, #00c6ff, #0072ff);
+    --color-gradient-text: linear-gradient(to right, #00c6ff, #0072ff);
+    --color-transparent-white-10: rgba(255, 255, 255, 0.1);
+    --color-transparent-white-20: rgba(255, 255, 255, 0.2);
+    --color-blue-shadow-50: rgba(0, 114, 255, 0.5);
+    --color-blue-shadow-40: rgba(0, 114, 255, 0.4);
+    --color-blue-shadow-30: rgba(0, 114, 255, 0.3);
+    --color-blue-shadow-70: rgba(0, 114, 255, 0.7);
+    --color-blue-shadow-0: rgba(0, 114, 255, 0);
+    --color-transparent: transparent;
+    --color-white-20: rgba(255, 255, 255, 0.2);
+  
+    /* Form and UI colors */
+    --color-light-bg: #f0f0f0;
+    --color-lighter-bg: #f8f8f8;
+    --color-lightest-bg: #f9f9f9;
+    --color-hover-bg: #e8e8e8;
+    --color-active-bg: #e0e0e0;
+    --color-border: #ccc;
+    --color-light-border: #e0e0e0;
+    --color-lighter-border: #eee;
+    --color-input-border: #ddd;
+    --color-input-focus: #4361ee;
+    --color-input-shadow: rgba(67, 97, 238, 0.1);
+    --color-placeholder: #aaa;
+  
+    /* Text colors */
+    --color-text-dark: #333;
+    --color-text-medium: #555;
+    --color-text-light: #666;
+    --color-text-lighter: #777;
+    --color-text-lightest: #aaa;
+    
+    /* Button colors */
+    --color-primary: #4361ee;
+    --color-primary-hover: #374fc7;
+    --color-dark-purple: #3a0ca3;
+    
+    /* Background colors */
+    --color-page-bg: #f5f7fa;
+    --color-component-bg: white;
+    --color-hover-light: #f5f8ff;
+    
+    /* Box shadows */
+    --color-shadow: rgba(0, 0, 0, 0.1);
+
+   /* Primary Colors */
+   --primary-blue: #3498db;
+   --primary-dark-blue: #2980b9;
+   --primary-purple: #764ba2;
+   --primary-light-purple: #667eea;
+   
+   /* Secondary Colors */
+   --secondary-dark: #2c3e50;
+   --secondary-light: #ecf0f1;
+   
+   /* Accent Colors */
+   --accent-red: #e74c3c;
+   --accent-dark-red: #c0392b;
+   --accent-green: #2ecc71;
+   --accent-dark-green: #27ae60;
+   --accent-yellow: #F7DF1E;
+   
+   /* Background Colors */
+   --bg-light: #f8f9fa;
+   --bg-white: #ffffff;
+   --bg-light-blue: #e1f0fa;
+   --bg-lighter-blue: #bbdefb;
+   --bg-light-green: #c4fddc;
+   --bg-light-red: #ffdcdc;
+   
+   /* Text Colors */
+   --text-dark: #2c3e50;
+   --text-light: #ecf0f1;
+   --text-gray: #777;
+   --text-dark-gray: #555;
+   --text-black: #333;
+   --text-white: #ffffff;
+   
+   /* Border Colors */
+   --border-light: #dcdfe6;
+   --border-gray: #e1e1e1;
+   --border-dark-gray: #ddd;
+   --border-blue: #1976d2;
+   
+   /* Status Colors */
+   --success-light: rgba(42, 240, 125, 1);
+   --success-dark: #27ae60;
+   --error-light: rgba(231, 76, 60, 0.1);
+   --error-dark: #c0392b;
+   --warning-light: #392f1c;
+   --warning-dark: #f2c879;
+   
+   /* Shadow Colors */
+   --shadow-light: rgba(0, 0, 0, 0.1);
+   --shadow-medium: rgba(0,0,0,0.05);
+   
+   /* Special Colors */
+   --html-orange: #E34F26;
+   --html-light-orange: #EF652A;
+   --css-blue: #1572B6;
+   --css-light-blue: #33A9DC;
+
+
+    /* New variables for aboutEditor section */
+    --about-text-primary: #333;
+    --about-text-secondary: #7f8c8d;
+    --about-text-dark: #2c3e50;
+    --about-blue: #3498db;
+    --about-dark-blue: #2980b9;
+    --about-light-bg: #f9f9f9;
+    --about-card-shadow: rgba(0, 0, 0, 0.1);
+    --about-tech-bg: #e0f7fa;
+    --about-tech-text: #00838f;
+    --about-mission-bg: #e3f2fd;
+    --about-mission-title: #1565c0;
+    --about-dark-bg: #eee;
+    
+    /* Dark mode variables */
+    --about-dark-bg: #1a1a1a;
+    --about-dark-text: #e0e0e0;
+    --about-dark-card-bg: #2d2d2d;
+    --about-dark-card-shadow: rgba(0, 0, 0, 0.3);
+    --about-dark-mission-bg: #2a3a4a;
+    --about-dark-tech-bg: #37474f;
+    --about-dark-tech-text: #80deea;
+    --about-dark-subtext: #b0b0b0;
+    
+    /* Settings panel variables */
+    --settings-panel-bg: #f9f9f9;
+    --settings-border: #eaeaea;
+    --settings-button-bg: #ddd;
+    --settings-button-hover: #ccc;
+    --settings-recording-bg: #ff5252;
+    --settings-log-bg: #333;
+    --settings-placeholder-text: #999;
+    
+    /* Reset button variables */
+    --reset-btn-bg: #f0f0f0;
+    --reset-btn-border: #d0d0d0;
+    --reset-btn-hover: #e0e0e0;
+    --reset-btn-active: #d0d0d0;
+    --reset-btn-focus: #4d90fe;
+    }
+  
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+/* Dev Mode Panels */
+#html-panel,#css-panel,#js-panel,#preview-panel {
+    flex: 1;
+    display: none; /* Default hidden */
+    border-right: 1px solid var(--color-border-gray);
+}
+  
+#icon-sidebar {
+    width: 50px;
+    background-color: var(--editor-panel);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 15px;
+    border-right: 1px solid var(--text-dark)
+}
+#logo{
+    background: url('../../icons/soniverse-logo.png');
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--editor-panel);
+    border-radius: 5px;
+    color: var(--color-white);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+  
+.icon:hover {
+    background-color: var(--color-light-gray);
+    transform: scale(1.1);
+}
+  
+.icon.active {
+    background-color: var(--color-lighter-gray);
+    transform: scale(1.05);
+}
+#main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#top-section {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+}
+
+#bottom-section {
+    height: 200px;
+    display: flex;
+    border-top: 1px solid var(--color-black);
+    overflow: hidden;
+    min-height: 0;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+
+}
+#diretoryHeaderprogMode{
+    height: 46px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    padding: 3px;
+    background-color: var(--color-light-red);
+    font-weight: bold;
+    user-select: none;
+    text-align: center;
+
+    align-items: center;
+}
+#codeDetails{
+    float: left;
+    align-self: center;
+    
+}
+.content {
+    flex: 1;
+    /* padding: 10px; */
+    overflow: auto;
+
+}
+
+.vertical-divider {
+    width: 3px;
+    background: var(--color-black);
+    cursor: col-resize;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.vertical-divider:hover, .vertical-divider:active {
+    background: var(--color-black);
+}
+
+.horizontal-divider {
+    height: 3px;
+    background: var(--color-black);
+    cursor: row-resize;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.horizontal-divider:hover, .horizontal-divider:active {
+    background: var(--editor-panel);
+}
+
+#top-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+  
+.panel {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--editor-border);
+    overflow: hidden;
+}
+  
+#directory-panel {
+    flex: 0 0 230px;
+    min-width: 100px;
+    
+}
+  
+#code-panel {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--editor-panel);
+}
+  
+.header {
+    background: var(--color-darker-blue);
+    padding: 3px;
+    font-weight: bold;
+    text-align: center;
+}
+.content {
+    flex: 1;
+    background: var(--editor-panel);
+}
+.vertical-divider {
+    width: 3px;
+    background: var(--color-dark-black);
+    cursor: col-resize;
+}
+.hidden {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container */
+#container-dev {
+    display: none; /* Start hidden */
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* LEFT SIDE */
+  #left-side-dev {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #divider-main-dev {
+    width: 4px;
+    background: var(--color-black);
+    cursor: col-resize;
+    flex-shrink: 0;
+}
+
+  /* Top Part (Directory + HTML + CSS) */
+  #top-section-dev {
+    display: flex;
+    flex: 7;
+    overflow: hidden;
+  }
+  
+  /* JS Bottom Part */
+  #js-panel-dev {
+    flex: 3;
+    overflow: hidden;
+  }
+  
+  /* RIGHT SIDE (Preview) */
+  #right-side-dev {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--color-dark-gray);
+    width: 30%;
+  }
+  
+  /* Panels */
+  .panel-dev {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+  }
+  
+  .header-dev {
+    background: var(--color-lighter-red);
+    padding: 8px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .content-dev {
+    flex: 1;
+    
+    background-color: var(--editor-panel);
+    overflow: auto;
+
+  }
+  
+  /* Dividers */
+  .vertical-divider-dev {
+    width: 4px;
+    background: var(--color-black);
+    cursor: col-resize;
+    flex-shrink: 0;
+  }
+  
+  .horizontal-divider-dev {
+    height: 1px;
+    background: var(--color-black);
+    cursor: row-resize;
+    flex-shrink: 0;
+  }
+  
+  /* Specific Sizes */
+  #directory-panel-dev {
+    flex: 0 0 230px;
+    min-width: 100px;
+  }
+  
+  #html-panel-dev,
+  #css-panel-dev {
+    flex: 1;
+    
+    background-color: var(--editor-panel);
+  }
+  
+  #preview-panel-dev {
+    flex: 1;
+    
+    background-color: var(--editor-panel);
+  }
+
+/* Hide dev icons by default */
+#file-dev,
+#html-icon,
+#css-icon,
+#js-icon,
+#preview-icon,
+#sampleDev,
+#converter {
+    display: none;
+}
+
+/* In dev mode: hide regular icons */
+.show-dev > .icon:not(#dev-mode):not(#html-icon):not(#css-icon):not(#js-icon):not(#preview-icon):not(#file-dev):not(#sampleDev):not(#converter) {
+    display: none;
+}
+
+/* In dev mode: show dev icons + dev-mode */
+.show-dev #file-dev,
+.show-dev #html-icon,
+.show-dev #css-icon,
+.show-dev #js-icon,
+.show-dev #preview-icon,
+.show-dev #dev-mode,
+.show-dev #sampleDev,
+.show-dev #converter {
+    display: flex; /* Or block */
+}
+
+
+
+
+
